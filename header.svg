@@ -1,30 +1,19 @@
 <svg width="800" height="200" viewBox="0 0 800 200" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="200" fill="#050a14" />
   <defs>
     <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" style="stop-color:#00d2ff;stop-opacity:1" />
       <stop offset="100%" style="stop-color:#9d50bb;stop-opacity:1" />
     </linearGradient>
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@800&family=Inter:wght@400&display=swap');
-      .title { font-family: 'Outfit', sans-serif; font-size: 42px; fill: #ffffff; font-weight: 800; }
-      .subtitle { font-family: 'Inter', sans-serif; font-size: 18px; fill: #94a3b8; letter-spacing: 4px; text-transform: uppercase; }
-      .glow { filter: drop-shadow(0 0 8px rgba(0, 210, 255, 0.6)); }
-      @keyframes pulse {
-        0% { opacity: 0.4; }
-        50% { opacity: 1; }
-        100% { opacity: 0.4; }
-      }
-      .line { stroke: url(#grad1); stroke-width: 2; opacity: 0.3; animation: pulse 3s infinite; }
-    </style>
   </defs>
-  <rect width="800" height="200" fill="#050a14" />
   
   <!-- Decorative Lines -->
-  <line x1="50" y1="40" x2="750" y2="40" class="line" />
-  <line x1="50" y1="160" x2="750" y2="160" class="line" style="animation-delay: 1.5s;" />
+  <line x1="50" y1="40" x2="750" y2="40" stroke="url(#grad1)" stroke-width="2" opacity="0.3" />
+  <line x1="50" y1="160" x2="750" y2="160" stroke="url(#grad1)" stroke-width="2" opacity="0.3" />
   
-  <text x="50%" y="100" text-anchor="middle" class="title glow">CODEFLOW SYSTEMS</text>
-  <text x="50%" y="140" text-anchor="middle" class="subtitle">Data Architecture &amp; Cloud Ops</text>
+  <!-- Text using standard fonts for compatibility -->
+  <text x="50%" y="100" text-anchor="middle" font-family="Arial, sans-serif" font-size="42" fill="#ffffff" font-weight="bold">CODEFLOW SYSTEMS</text>
+  <text x="50%" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#94a3b8" letter-spacing="4">Data Architecture &amp; Cloud Ops</text>
   
   <!-- Tech symbols -->
   <path d="M720 80l20 20-20 20" stroke="#00d2ff" fill="none" stroke-width="2"/>
