@@ -33,7 +33,9 @@ body::before {
     width: 100%;
     height: 100%;
     background:
-        radial-gradient(circle at 50% 50%, rgba(0, 210, 255, 0.02), transparent 70%);
+        radial-gradient(circle at 50% 50%, rgba(0, 210, 255, 0.05), transparent 70%),
+        radial-gradient(circle at 10% 20%, rgba(0, 210, 255, 0.08), transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(157, 80, 187, 0.06), transparent 40%);
     pointer-events: none;
     z-index: -1;
 }
@@ -169,44 +171,43 @@ h3,
     position: absolute;
     pointer-events: none;
     z-index: 0;
-    filter: blur(2px);
-    opacity: 0.3;
 }
 
 .cloud-1 {
     top: 15%;
     left: 5%;
-    font-size: 6rem;
-    animation: drift 12s ease-in-out infinite;
-    filter: blur(40px);
+    font-size: 8rem;
+    animation: drift 15s ease-in-out infinite;
+    filter: blur(60px);
     color: var(--primary);
+    opacity: 0.4;
 }
 
 .nodes-1 {
-    top: 20%;
-    right: 15%;
-    width: 250px;
-    height: 250px;
+    top: 15%;
+    right: 10%;
+    width: 300px;
+    height: 300px;
     color: var(--primary);
-    opacity: 0.15;
+    opacity: 0.25;
 }
 
 .nodes-2 {
-    bottom: 10%;
-    left: 10%;
-    width: 200px;
-    height: 200px;
+    bottom: 15%;
+    left: 8%;
+    width: 250px;
+    height: 250px;
     color: var(--secondary);
-    opacity: 0.1;
+    opacity: 0.2;
 }
 
 .nodes-3 {
-    top: 50%;
-    right: 5%;
-    width: 150px;
-    height: 150px;
+    top: 55%;
+    right: 3%;
+    width: 180px;
+    height: 180px;
     color: var(--primary);
-    opacity: 0.1;
+    opacity: 0.2;
 }
 
 .reveal {
@@ -348,9 +349,9 @@ nav.scrolled {
     display: flex;
     align-items: center;
     background:
-        radial-gradient(circle at 10% 20%, rgba(0, 210, 255, 0.12) 0%, transparent 45%),
-        radial-gradient(circle at 90% 80%, rgba(157, 80, 187, 0.1) 0%, transparent 45%),
-        linear-gradient(to bottom, rgba(5, 10, 20, 0.8), var(--bg-dark));
+        radial-gradient(circle at 10% 20%, rgba(0, 210, 255, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 90% 80%, rgba(157, 80, 187, 0.12) 0%, transparent 50%),
+        linear-gradient(to bottom, rgba(5, 10, 20, 0.7), var(--bg-dark));
     position: relative;
     overflow: hidden;
 }
