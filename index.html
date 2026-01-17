@@ -1,279 +1,870 @@
 <!DOCTYPE html>
-<html lang="es">
+<html class="dark" lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Codeflow Systems | Automatización & Data Intelligence FinTech</title>
-    <meta name="description"
-        content="Escalamos tu FinTech con Inteligencia de Datos y Automatización de Infraestructura. Reducción del 75% en tiempos operativos.">
-    <link rel="stylesheet" href="style.css">
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Codeflow Systems - Automatización & Data Architecture</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#8b5cf6",
+                        "primary-hover": "#7c3aed",
+                        "primary-glow": "#a78bfa",
+                        "accent": "#06b6d4",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#050505",
+                        "surface-dark": "#0f0f11",
+                        "secondary-dark": "#161622",
+                        "text-light": "#e2e8f0",
+                        "text-main": "#ffffff",
+                        "text-muted": "#94a3b8",
+                        "border-dark": "#2d2a42",
+                        "card-bg": "#000000",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "full": "9999px"
+                    },
+                    backgroundImage: {
+                        'hero-gradient': 'linear-gradient(135deg, rgba(10,10,18,0.95) 0%, rgba(139,92,246,0.15) 100%)',
+                        'glow-radial': 'radial-gradient(circle at center, rgba(139,92,246,0.15) 0%, rgba(10,10,18,0) 70%)',
+                        'button-gradient': 'linear-gradient(to right, #8b5cf6, #06b6d4)',
+                        'violet-gradient': 'linear-gradient(135deg, #8b5cf6 0%, #3b82f6 100%)',
+                        'dark-gradient': 'linear-gradient(to bottom, #050505, #111)',
+                    },
+                    boxShadow: {
+                        'neon': '0 0 20px -5px rgba(139, 92, 246, 0.5)',
+                        'neon-hover': '0 0 30px -5px rgba(139, 92, 246, 0.7)',
+                        'glass': '0 4px 30px rgba(0, 0, 0, 0.1)',
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0a0a12;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #2d2a42;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #8b5cf6;
+        }
+
+        .bg-grid-pattern {
+            background-image: linear-gradient(to right, #2d2a42 1px, transparent 1px),
+                linear-gradient(to bottom, #2d2a42 1px, transparent 1px);
+            background-size: 40px 40px;
+            mask-image: radial-gradient(circle at center, black 40%, transparent 80%);
+            -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 80%);
+        }
+
+        .text-gradient {
+            background: linear-gradient(to right, #a78bfa, #60a5fa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .icon-gradient {
+            background: linear-gradient(135deg, #8b5cf6, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .glass-card {
+            background: rgba(19, 19, 31, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(139, 92, 246, 0.15);
+        }
+
+        .glass-panel {
+            background: rgba(15, 15, 17, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
 </head>
 
-<body>
+<body
+    class="bg-background-light dark:bg-black text-slate-900 dark:text-text-main font-display transition-colors duration-200 selection:bg-primary selection:text-white">
 
-    <nav id="navbar">
-        <div class="container nav-container">
-            <div class="brand">
-                <div class="brand-icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="16 18 22 12 16 6"></polyline>
-                        <polyline points="8 6 2 12 8 18"></polyline>
-                    </svg>
-                </div>
-                CODEFLOW <span>SYSTEMS</span>
+    <!-- Snippet 1: Header + Background Layers -->
+    <div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+        <div class="fixed inset-0 pointer-events-none z-0">
+            <div class="absolute top-0 left-1/4 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[120px] opacity-30">
             </div>
-            <ul class="nav-links">
-                <li><a href="#soluciones">Soluciones</a></li>
-                <li><a href="#proyectos">Proyectos</a></li>
-                <li><a href="#equipo">Equipo</a></li>
-            </ul>
-            <div class="nav-actions">
-                <a href="#contacto" class="btn btn-primary">Agendar Auditoría</a>
+            <div
+                class="absolute bottom-0 right-1/4 w-[600px] h-[600px] bg-accent/10 rounded-full blur-[120px] opacity-20">
             </div>
-        </div>
-    </nav>
-
-    <header class="hero">
-        <!-- Floating Background Decor -->
-        <div class="bg-decor cloud-1"></div>
-        <div class="bg-decor nodes-1">
-            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="20" cy="20" r="3" fill="currentColor" />
-                <circle cx="180" cy="50" r="3" fill="currentColor" />
-                <circle cx="100" cy="150" r="3" fill="currentColor" />
-                <path d="M20 20 L180 50 L100 150 Z" fill="none" stroke="currentColor" stroke-width="1.5"
-                    stroke-dasharray="4 4" />
-            </svg>
-        </div>
-        <div class="bg-decor nodes-2">
-            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="50" cy="180" r="2.5" fill="currentColor" />
-                <circle cx="150" cy="20" r="2.5" fill="currentColor" />
-                <path d="M50 180 L150 20" fill="none" stroke="currentColor" stroke-width="1.2"
-                    stroke-dasharray="10 5" />
-            </svg>
-        </div>
-        <div class="bg-decor nodes-3">
-            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="10" cy="100" r="2" fill="currentColor" />
-                <circle cx="190" cy="100" r="2" fill="currentColor" />
-                <path d="M10 100 Q100 0 190 100" fill="none" stroke="currentColor" stroke-width="1"
-                    stroke-dasharray="2 2" />
-            </svg>
+            <div class="absolute inset-0 bg-grid-pattern opacity-[0.07]"></div>
         </div>
 
-        <div class="container">
-            <div class="hero-content">
-                <span class="badge"><span class="pulse"></span> Expertos en FinTech</span>
-                <h1>Automatización y <span>Arquitectura de Datos</span></h1>
-                <p>Optimizamos infraestructuras en la nube y transformamos datos en activos estratégicos.
-                    <strong>Reducción de tiempos en un 75%</strong> garantizando continuidad operativa.
-                </p>
-                <div class="hero-actions">
-                    <a href="#contacto" class="btn btn-primary">Agendar Auditoría Gratis ✨</a>
-                    <a href="#soluciones" class="btn btn-outline">Ver Soluciones</a>
-                </div>
-            </div>
-            <div class="hero-visual">
-                <div class="dashboard-mockup glass">
-                    <div class="mock-nav">
-                        <div class="circles"><span></span><span></span><span></span></div>
-                        <div class="mock-user">👤</div>
-                    </div>
-                    <div class="mock-body">
-                        <div class="mock-sidebar">
-                            <div class="item active"></div>
-                            <div class="item"></div>
-                            <div class="item"></div>
-                            <div class="item"></div>
+        <header class="sticky top-0 z-50 w-full border-b border-white/5 bg-black/80 backdrop-blur-md">
+            <div class="layout-container flex justify-center px-4 sm:px-8">
+                <div class="layout-content-container flex w-full max-w-[1280px] items-center justify-between py-4">
+                    <div class="flex items-center gap-3 group">
+                        <div
+                            class="flex size-8 items-center justify-center rounded-lg bg-gradient-to-br from-primary to-accent text-white shadow-lg shadow-primary/30 group-hover:shadow-primary/50 transition-all duration-300">
+                            <span class="material-symbols-outlined text-[20px]">terminal</span>
                         </div>
-                        <div class="mock-content">
-                            <div class="mock-top-stats">
-                                <div class="mini-card">
-                                    <small>Revenue</small>
-                                    <strong>$24,780</strong>
+                        <h2
+                            class="text-lg font-bold tracking-tight text-white group-hover:text-primary transition-colors">
+                            Codeflow Systems</h2>
+                    </div>
+                    <nav class="hidden md:flex flex-1 justify-end items-center gap-6">
+                        <div class="flex items-center gap-8 text-white">
+                            <a class="text-sm font-medium text-slate-400 hover:text-white transition-colors"
+                                href="#servicios">Servicios</a>
+                            <a class="text-sm font-medium text-slate-400 hover:text-white transition-colors"
+                                href="#impacto">Impacto</a>
+                            <a class="text-sm font-medium text-slate-400 hover:text-white transition-colors"
+                                href="#nosotros">Fundadores</a>
+                            <a class="text-sm font-medium text-slate-400 hover:text-white transition-colors"
+                                href="#audit">Auditoría</a>
+                        </div>
+                        <!-- Language Toggle -->
+                        <button id="langToggle"
+                            class="flex items-center gap-2 px-3 py-2 rounded-lg bg-white/5 border border-white/10 hover:border-primary/50 hover:bg-white/10 transition-all group">
+                            <span
+                                class="material-symbols-outlined text-sm text-slate-400 group-hover:text-primary transition-colors">language</span>
+                            <span id="currentLang"
+                                class="text-xs font-bold text-slate-300 group-hover:text-white transition-colors">ES</span>
+                        </button>
+                        <a href="#audit"
+                            class="flex h-10 items-center justify-center rounded-lg bg-primary hover:bg-primary-hover px-5 text-sm font-bold text-white shadow-neon hover:shadow-neon-hover transition-all transform hover:-translate-y-0.5 border border-primary/50">
+                            <span class="truncate">Agendar Consulta</span>
+                        </a>
+                    </nav>
+                    <div class="md:hidden flex items-center text-white">
+                        <span
+                            class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors">menu</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="flex-grow flex flex-col items-center relative z-10 w-full">
+
+            <!-- Hero Section (Snippet 1) -->
+            <section id="hero" class="w-full flex justify-center px-4 sm:px-8 py-12 lg:py-20">
+                <div class="layout-content-container flex flex-col max-w-[1280px] w-full">
+                    <div class="@container">
+                        <div class="flex flex-col-reverse lg:flex-row gap-12 lg:gap-16 items-center">
+                            <div class="flex flex-col flex-1 gap-8 text-center lg:text-left min-w-0 relative">
+                                <div class="flex flex-col gap-4">
+                                    <div
+                                        class="inline-flex items-center gap-2 self-center lg:self-start rounded-full bg-[#1e1b2e] border border-primary/30 px-3 py-1 text-xs font-semibold text-primary shadow-[0_0_15px_rgba(139,92,246,0.3)] backdrop-blur-sm">
+                                        <span class="material-symbols-outlined text-[16px] text-accent">verified</span>
+                                        <span
+                                            class="bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">Microsoft
+                                            Solutions Partner</span>
+                                    </div>
+                                    <h1
+                                        class="text-4xl md:text-5xl lg:text-6xl font-black leading-[1.1] tracking-tight text-slate-900 dark:text-white">
+                                        Automatización de Operaciones y <span
+                                            class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-purple-400 to-accent">Arquitectura
+                                            de Datos</span>
+                                    </h1>
+                                    <p
+                                        class="text-lg text-slate-600 dark:text-slate-400 leading-relaxed max-w-2xl mx-auto lg:mx-0 font-medium">
+                                        Impulsamos startups y scale-ups FinTech reduciendo tiempos de procesamiento en
+                                        un 75% mediante DataOps y arquitectura Azure experta.
+                                    </p>
                                 </div>
-                                <div class="mini-card">
-                                    <small>Growth</small>
-                                    <strong class="up">+15%</strong>
+                                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                                    <a href="#audit"
+                                        class="group flex h-12 items-center justify-center rounded-lg bg-white text-slate-900 px-6 text-base font-bold shadow-[0_0_20px_rgba(139,92,246,0.3)] hover:shadow-[0_0_30px_rgba(139,92,246,0.5)] hover:scale-[1.02] transition-all duration-300">
+                                        <span
+                                            class="material-symbols-outlined mr-2 text-[20px] text-primary group-hover:scale-110 transition-transform">calendar_month</span>
+                                        <span class="btn-text">Agendar Auditoría Gratuita</span>
+                                    </a>
+                                    <a href="#impacto"
+                                        class="flex h-12 items-center justify-center rounded-lg border border-slate-300 dark:border-slate-700 bg-transparent px-6 text-base font-bold text-slate-700 dark:text-white hover:bg-slate-100 dark:hover:bg-secondary-dark hover:border-primary/50 transition-all duration-300">
+                                        <span class="btn-text">Ver Casos de Uso</span>
+                                    </a>
+                                </div>
+                                <div class="pt-6 flex flex-col gap-4">
+                                    <p class="text-xs font-semibold uppercase tracking-wider text-slate-500">Con la
+                                        confianza de innovadores FinTech</p>
+                                    <div
+                                        class="flex flex-wrap justify-center lg:justify-start gap-6 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+                                        <div class="flex items-center gap-2 text-slate-400 font-bold text-sm group">
+                                            <span
+                                                class="material-symbols-outlined text-[20px] group-hover:text-[#0078D4] transition-colors">cloud_done</span>
+                                            Azure
+                                        </div>
+                                        <div class="flex items-center gap-2 text-slate-400 font-bold text-sm group">
+                                            <span
+                                                class="material-symbols-outlined text-[20px] group-hover:text-[#FF3621] transition-colors">dataset</span>
+                                            Databricks
+                                        </div>
+                                        <div class="flex items-center gap-2 text-slate-400 font-bold text-sm group">
+                                            <span
+                                                class="material-symbols-outlined text-[20px] group-hover:text-[#29B5E8] transition-colors">security</span>
+                                            Snowflake
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="mock-main-chart">
-                                <div class="chart-bars">
-                                    <div class="bar" style="height: 40%"></div>
-                                    <div class="bar" style="height: 70%"></div>
-                                    <div class="bar" style="height: 50%"></div>
-                                    <div class="bar" style="height: 90%"></div>
-                                    <div class="bar" style="height: 60%"></div>
-                                </div>
-                            </div>
-                            <div class="mock-bottom-row">
-                                <div class="mock-circle-stat">
-                                    <svg viewBox="0 0 36 36" class="circular-chart">
-                                        <path class="circle" stroke-dasharray="75, 100"
-                                            d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-                                    </svg>
-                                </div>
-                                <div class="mock-list">
-                                    <div class="list-item"></div>
-                                    <div class="list-item"></div>
+                            <div class="flex-1 w-full max-w-[600px] lg:max-w-none relative">
+
+                                <div
+                                    class="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl border border-slate-200 dark:border-border-dark group bg-background-dark">
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-tr from-background-dark/90 via-background-dark/20 to-transparent z-10">
+                                    </div>
+                                    <video autoplay loop muted playsinline
+                                        class="absolute w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.01]"
+                                        style="filter: hue-rotate(260deg) saturate(1.2); position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 100%; height: 100%;">
+                                        <source src="Generar_Video_de_Imagen_Estática.mp4" type="video/mp4">
+                                    </video>
+
+
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="floating-glass glass glow-card">
-                    <span class="label">Efficiency Boost</span>
-                    <div class="value">+75%</div>
-                </div>
-            </div>
-        </div>
-    </header>
+            </section>
 
-    <section id="soluciones" class="pillars">
-        <div class="container">
-            <h2 class="section-title">Nuestros Pilares de Crecimiento</h2>
-            <p class="section-subtitle">Especializados en la intersección entre la ingeniería de datos y la robustez de
-                la infraestructura.</p>
-
-            <div class="pillar-grid">
-                <div class="pillar-card glass">
-                    <div class="icon">📊</div>
-                    <h3>Data Intelligence & ML</h3>
-                    <ul>
-                        <li>Pipelines ETL Automatizados</li>
-                        <li>Dashboards Estratégicos</li>
-                        <li>Modelos Predictivos</li>
-                    </ul>
+            <!-- Features Strip (Snippet 1) -->
+            <div
+                class="w-full bg-slate-50 dark:bg-[#0f0e1a] border-y border-slate-200 dark:border-border-dark relative overflow-hidden">
+                <div
+                    class="absolute top-0 left-1/2 -translate-x-1/2 w-2/3 h-full bg-primary/5 blur-3xl pointer-events-none">
                 </div>
-                <div class="pillar-card glass">
-                    <div class="icon">☁️</div>
-                    <h3>Cloud Ops & Infra</h3>
-                    <ul>
-                        <li>Gestión de Infraestructura Azure</li>
-                        <li>Automatización de Soporte</li>
-                        <li>Garantía de Continuidad 99%</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="roi-calculator glass">
-        <div class="container">
-            <h3>Calcula tu Potencial de Optimización</h3>
-            <p>¿Cuánto tiempo recuperaría tu equipo con nuestra automatización?</p>
-            <div class="calc-wrapper">
-                <div class="input-group">
-                    <label>Horas manuales por semana</label>
-                    <input type="range" id="hoursInput" min="0" max="100" value="40">
-                    <span id="hoursValue">40h</span>
-                </div>
-                <div class="results">
-                    <div class="result-item">
-                        <label>Ahorro Mensual</label>
-                        <div id="monthlySaving" class="value">120h</div>
-                    </div>
-                    <div class="result-item">
-                        <label>Retorno Operativo</label>
-                        <div id="roiMultiplier" class="value">3.6x</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="equipo" class="founders">
-        <div class="container">
-            <h2 class="section-title">The Founders</h2>
-            <p class="section-subtitle">Liderazgo técnico con visión de negocio.</p>
-
-            <div class="founder-grid">
-                <div class="founder-card glass">
-                    <div class="founder-img"
-                        style="background-image: url('https://francoarce.site/assets/profile.jpg');"></div>
-                    <div class="founder-info">
-                        <h3>Rodrigo Valdez</h3>
-                        <p class="role">Co-Founder & Cloud Ops</p>
-                        <p class="desc">Especialista en infraestructura bancaria y automatización de procesos críticos
-                            en Azure.</p>
-                    </div>
-                </div>
-                <div class="founder-card glass">
-                    <div class="founder-img"
-                        style="background-image: url('https://francoarce.site/assets/profile.jpg');"></div>
-                    <div class="founder-info">
-                        <h3>Franco Arce</h3>
-                        <p class="role">Co-Founder & Data Lead</p>
-                        <p class="desc">Experto en arquitectura Data Lakehouse y reducción de tiempos operativos
-                            mediante IA.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <div class="bento-footer">
-                <div class="bento-card bento-main glass">
-                    <h2>¿Listo para escalar?</h2>
-                    <p>No somos solo consultores, somos tu partner tecnológico. Hablemos sobre cómo optimizar tu
-                        operación hoy.</p>
-                    <div class="hero-actions">
-                        <a href="#" class="btn btn-primary">Agendar Llamada en Calendly →</a>
-                    </div>
-                </div>
-                <div class="bento-card footer-map-card glass">
-                    <div class="map-placeholder">
-                        <svg viewBox="0 0 400 600" xmlns="http://www.w3.org/2000/svg" class="map-svg">
-                            <!-- stylized Southern Cone / Argentina path -->
-                            <path fill="currentColor" opacity="0.15"
-                                d="M120,50 L180,40 L210,120 L230,180 L220,250 L180,400 L150,550 L130,580 L110,550 L100,450 L110,300 L100,150 Z" />
-                            <circle cx="150" cy="300" r="120" fill="none" stroke="currentColor" stroke-width="0.5"
-                                opacity="0.1" />
-                            <circle cx="150" cy="300" r="200" fill="none" stroke="currentColor" stroke-width="0.5"
-                                opacity="0.05" />
-                        </svg>
-                        <div class="map-marker marker-ba">
-                            <div class="marker-point"></div>
-                            <span class="marker-label">Buenos Aires</span>
-                        </div>
-                        <div class="map-marker marker-cba">
-                            <div class="marker-point"></div>
-                            <span class="marker-label">Córdoba</span>
-                        </div>
-                        <div class="map-marker marker-global">
-                            <div class="marker-point"></div>
-                            <span class="marker-label">Global Service</span>
+                <div class="layout-container flex justify-center px-4 sm:px-8 py-12 relative z-10">
+                    <div class="layout-content-container flex flex-col w-full max-w-[1280px]">
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                            <div
+                                class="group flex gap-4 p-5 rounded-xl border border-transparent hover:border-primary/20 hover:bg-white/5 dark:hover:bg-[#1a1829] transition-all duration-300">
+                                <div
+                                    class="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                                    <span class="material-symbols-outlined text-[28px]">schema</span>
+                                </div>
+                                <div class="flex flex-col gap-1">
+                                    <h3
+                                        class="text-base font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">
+                                        Arquitectura Azure</h3>
+                                    <p class="text-sm text-slate-600 dark:text-slate-400">Diseño de infraestructura
+                                        escalable y segura para el sector financiero.</p>
+                                </div>
+                            </div>
+                            <div
+                                class="group flex gap-4 p-5 rounded-xl border border-transparent hover:border-primary/20 hover:bg-white/5 dark:hover:bg-[#1a1829] transition-all duration-300">
+                                <div
+                                    class="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-accent/10 text-accent group-hover:bg-accent group-hover:text-white transition-colors duration-300">
+                                    <span class="material-symbols-outlined text-[28px]">monitoring</span>
+                                </div>
+                                <div class="flex flex-col gap-1">
+                                    <h3
+                                        class="text-base font-bold text-slate-900 dark:text-white group-hover:text-accent transition-colors">
+                                        DataOps & Analytics</h3>
+                                    <p class="text-sm text-slate-600 dark:text-slate-400">Pipelines de datos en tiempo
+                                        real para decisiones críticas al instante.</p>
+                                </div>
+                            </div>
+                            <div
+                                class="group flex gap-4 p-5 rounded-xl border border-transparent hover:border-primary/20 hover:bg-white/5 dark:hover:bg-[#1a1829] transition-all duration-300">
+                                <div
+                                    class="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                                    <span class="material-symbols-outlined text-[28px]">robot_2</span>
+                                </div>
+                                <div class="flex flex-col gap-1">
+                                    <h3
+                                        class="text-base font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">
+                                        Automatización IA</h3>
+                                    <p class="text-sm text-slate-600 dark:text-slate-400">Eliminación de tareas manuales
+                                        repetitivas mediante modelos inteligentes.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="tech-stack">
-                <span class="tech-badge">Azure</span>
-                <span class="tech-badge">Python</span>
-                <span class="tech-badge">SQL</span>
-                <span class="tech-badge">React</span>
-                <span class="tech-badge">Power BI</span>
-                <span class="tech-badge">Terraform</span>
-                <span class="tech-badge">Intune</span>
-            </div>
-
-            <div class="footer-bottom">
-                <div class="team">
-                    <p><strong>Rodrigo Valdez</strong> | Cloud & Ops Lead</p>
-                    <p><strong>Franco Arce</strong> | Data & Architecture Lead</p>
+            <!-- Pillars Section (Snippet 2) -->
+            <section id="servicios"
+                class="w-full flex-grow flex flex-col items-center bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-slate-900 via-background-dark to-black py-20">
+                <div class="w-full max-w-[1280px] px-4 md:px-10 text-center relative overflow-hidden mb-16">
+                    <div
+                        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/20 blur-[120px] rounded-full -z-10 pointer-events-none">
+                    </div>
+                    <h2
+                        class="text-primary-glow text-xs md:text-sm font-bold tracking-[0.2em] uppercase mb-4 border border-primary/30 inline-block px-3 py-1 rounded-full bg-primary/10 backdrop-blur-sm">
+                        Expertise Técnica</h2>
+                    <h1
+                        class="text-white text-4xl md:text-5xl lg:text-7xl font-black leading-tight tracking-[-0.02em] max-w-5xl mx-auto mb-6 drop-shadow-lg">
+                        Nuestros Pilares <span class="text-gradient">Tecnológicos</span>
+                    </h1>
+                    <p class="text-slate-300 text-lg md:text-xl font-medium leading-relaxed max-w-2xl mx-auto">
+                        Combinamos inteligencia de datos con infraestructura robusta. Dos áreas de especialización, un
+                        solo objetivo: escalar tu FinTech.
+                    </p>
                 </div>
-                <p>&copy; 2026 Codeflow Systems. Buenos Aires & Córdoba, Argentina.</p>
-            </div>
-        </div>
-    </footer>
 
-    <script src="script.js"></script>
+                <div class="w-full max-w-[1280px] px-4 md:px-10 pb-24">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-stretch">
+                        <!-- Pillar 1 -->
+                        <div
+                            class="group relative flex flex-col rounded-2xl border border-white/10 bg-card-bg hover:border-primary/50 hover:shadow-neon transition-all duration-500 p-8 lg:p-10 overflow-hidden">
+                            <div
+                                class="absolute -top-24 -right-24 w-64 h-64 bg-primary/10 rounded-full blur-[80px] group-hover:bg-primary/20 transition-colors duration-500">
+                            </div>
+                            <div class="flex items-center gap-5 mb-8 relative z-10">
+                                <div
+                                    class="p-4 rounded-xl bg-white/5 border border-white/10 text-primary shadow-lg backdrop-blur-sm group-hover:scale-110 transition-transform duration-300">
+                                    <span class="material-symbols-outlined text-[36px] icon-gradient">dataset</span>
+                                </div>
+                                <div>
+                                    <h3 class="text-white text-2xl md:text-3xl font-bold leading-tight tracking-tight">
+                                        Data Intelligence & ML</h3>
+                                    <p class="text-primary-glow/80 text-sm mt-1 font-medium tracking-wide">Decisiones
+                                        basadas en datos precisos.</p>
+                                </div>
+                            </div>
+                            <p class="text-slate-300 mb-12 leading-relaxed text-base">
+                                Transformamos datos crudos en activos estratégicos. Diseñamos arquitecturas de datos
+                                modernas que permiten análisis en tiempo real y modelos predictivos fiables para el
+                                sector financiero.
+                            </p>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-auto relative z-10">
+                                <div
+                                    class="flex flex-col gap-3 rounded-xl border border-white/10 bg-surface-dark p-5 hover:border-primary/60 hover:bg-white/5 transition-all duration-300 group/item">
+                                    <span
+                                        class="material-symbols-outlined text-primary-glow text-[28px] group-hover/item:scale-110 transition-transform">conversion_path</span>
+                                    <div>
+                                        <h4 class="text-white text-base font-bold leading-tight mb-1">Pipelines ETL/ELT
+                                        </h4>
+                                        <p
+                                            class="text-slate-400 text-xs leading-normal group-hover/item:text-slate-200 transition-colors">
+                                            Integración fiable de múltiples fuentes.</p>
+                                    </div>
+                                </div>
+                                <div
+                                    class="flex flex-col gap-3 rounded-xl border border-white/10 bg-surface-dark p-5 hover:border-primary/60 hover:bg-white/5 transition-all duration-300 group/item">
+                                    <span
+                                        class="material-symbols-outlined text-primary-glow text-[28px] group-hover/item:scale-110 transition-transform">monitoring</span>
+                                    <div>
+                                        <h4 class="text-white text-base font-bold leading-tight mb-1">Dashboards Live
+                                        </h4>
+                                        <p
+                                            class="text-slate-400 text-xs leading-normal group-hover/item:text-slate-200 transition-colors">
+                                            KPIs críticos en tiempo real.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Pillar 2 -->
+                        <div
+                            class="group relative flex flex-col rounded-2xl border border-white/10 bg-card-bg hover:border-accent/50 hover:shadow-[0_0_20px_-5px_rgba(6,182,212,0.5)] transition-all duration-500 p-8 lg:p-10 overflow-hidden">
+                            <div
+                                class="absolute -top-24 -right-24 w-64 h-64 bg-accent/10 rounded-full blur-[80px] group-hover:bg-accent/20 transition-colors duration-500">
+                            </div>
+                            <div class="flex items-center gap-5 mb-8 relative z-10">
+                                <div
+                                    class="p-4 rounded-xl bg-white/5 border border-white/10 text-accent shadow-lg backdrop-blur-sm group-hover:scale-110 transition-transform duration-300">
+                                    <span
+                                        class="material-symbols-outlined text-[36px] bg-clip-text text-transparent bg-gradient-to-br from-cyan-400 to-cyan-600">cloud_done</span>
+                                </div>
+                                <div>
+                                    <h3 class="text-white text-2xl md:text-3xl font-bold leading-tight tracking-tight">
+                                        Cloud Ops & Infra</h3>
+                                    <p class="text-cyan-300 text-sm mt-1 font-medium tracking-wide">Escalabilidad y
+                                        eficiencia operativa.</p>
+                                </div>
+                            </div>
+                            <p class="text-slate-300 mb-12 leading-relaxed text-base">
+                                Infraestructura en Azure diseñada para la resiliencia. Automatizamos operaciones para
+                                maximizar la eficiencia, reducir riesgos y acelerar el tiempo de comercialización.
+                            </p>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-auto relative z-10">
+                                <div
+                                    class="flex flex-col gap-3 rounded-xl border border-white/10 bg-surface-dark p-5 hover:border-accent/60 hover:bg-white/5 transition-all duration-300 group/item">
+                                    <span
+                                        class="material-symbols-outlined text-cyan-400 text-[28px] group-hover/item:scale-110 transition-transform">cloud_circle</span>
+                                    <div>
+                                        <h4 class="text-white text-base font-bold leading-tight mb-1">Gestión Azure</h4>
+                                        <p
+                                            class="text-slate-400 text-xs leading-normal group-hover/item:text-slate-200 transition-colors">
+                                            Optimización de costes y recursos.</p>
+                                    </div>
+                                </div>
+                                <div
+                                    class="flex flex-col gap-3 rounded-xl border border-white/10 bg-surface-dark p-5 hover:border-accent/60 hover:bg-white/5 transition-all duration-300 group/item">
+                                    <span
+                                        class="material-symbols-outlined text-cyan-400 text-[28px] group-hover/item:scale-110 transition-transform">deployed_code</span>
+                                    <div>
+                                        <h4 class="text-white text-base font-bold leading-tight mb-1">CI/CD Pipelines
+                                        </h4>
+                                        <p
+                                            class="text-slate-400 text-xs leading-normal group-hover/item:text-slate-200 transition-colors">
+                                            Entregas continuas y seguras.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Impact Section (Snippet 3) -->
+            <section id="impacto" class="w-full flex justify-center py-20 bg-background-dark relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
+                    <div
+                        class="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-primary/20 rounded-full blur-[120px]">
+                    </div>
+                    <div
+                        class="absolute bottom-[10%] left-[-10%] w-[400px] h-[400px] bg-blue-600/10 rounded-full blur-[100px]">
+                    </div>
+                </div>
+                <div class="layout-content-container flex flex-col max-w-[960px] flex-1 gap-12 px-4 md:px-10">
+                    <div class="flex flex-col gap-4 text-center md:text-left">
+                        <div class="flex items-center gap-2 justify-center md:justify-start">
+                            <span class="material-symbols-outlined text-primary">analytics</span>
+                            <span class="text-primary font-bold tracking-wider uppercase text-xs">Métricas de
+                                Rendimiento</span>
+                        </div>
+                        <h2
+                            class="text-white text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight tracking-[-0.02em]">
+                            Impacto Real en FinTech
+                        </h2>
+                        <p class="text-slate-400 text-lg max-w-2xl">
+                            Nuestra arquitectura DataOps transforma la velocidad y fiabilidad de sus operaciones
+                            financieras.
+                        </p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-white">
+                        <div
+                            class="flex flex-col gap-3 rounded-xl p-8 glass-card border-white/10 hover:shadow-neon transition-all duration-300 group">
+                            <span
+                                class="material-symbols-outlined text-slate-500 text-3xl group-hover:text-primary transition-colors">speed</span>
+                            <div class="flex flex-col gap-1 mt-2">
+                                <p
+                                    class="text-primary tracking-tight text-5xl md:text-6xl font-extrabold leading-tight">
+                                    75%</p>
+                                <p class="text-slate-200 text-base font-bold leading-normal pt-2">Reducción en tiempos
+                                </p>
+                                <p class="text-slate-400 text-sm font-medium leading-normal">de procesamiento de datos
+                                </p>
+                            </div>
+                        </div>
+                        <div
+                            class="flex flex-col gap-3 rounded-xl p-8 glass-card border-white/10 hover:shadow-neon transition-all duration-300 group">
+                            <span
+                                class="material-symbols-outlined text-slate-500 text-3xl group-hover:text-primary transition-colors">dns</span>
+                            <div class="flex flex-col gap-1 mt-2">
+                                <p
+                                    class="text-primary tracking-tight text-5xl md:text-6xl font-extrabold leading-tight">
+                                    99%</p>
+                                <p class="text-slate-200 text-base font-bold leading-normal pt-2">Disponibilidad</p>
+                                <p class="text-slate-400 text-sm font-medium leading-normal">de sistemas críticos Azure
+                                </p>
+                            </div>
+                        </div>
+                        <div
+                            class="flex flex-col gap-3 rounded-xl p-8 glass-card border-white/10 hover:shadow-neon transition-all duration-300 group">
+                            <span
+                                class="material-symbols-outlined text-slate-500 text-3xl group-hover:text-primary transition-colors">psychology</span>
+                            <div class="flex flex-col gap-1 mt-2">
+                                <p
+                                    class="text-primary tracking-tight text-5xl md:text-6xl font-extrabold leading-tight">
+                                    85%</p>
+                                <p class="text-slate-200 text-base font-bold leading-normal pt-2">Precisión</p>
+                                <p class="text-slate-400 text-sm font-medium leading-normal">en modelos predictivos de
+                                    IA</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Founders Section (Refactored from current index.html with new images) -->
+            <section id="nosotros" class="w-full flex-grow flex flex-col items-center py-20 bg-black">
+                <div class="w-full max-w-[960px] flex flex-col items-center text-center mb-16 space-y-4">
+                    <span
+                        class="text-primary font-bold tracking-wider uppercase text-xs md:text-sm bg-primary/10 px-3 py-1 rounded-full border border-primary/20">The
+                        Experts</span>
+                    <h2 class="text-white text-3xl md:text-5xl font-extrabold tracking-tight">Meet the Founders</h2>
+                    <p class="text-slate-400 text-base md:text-lg max-w-2xl leading-relaxed">
+                        Engineering trust through transparency. Our leadership combines decades of experience in
+                        high-scale
+                        cloud infrastructure and data architecture.
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10 w-full max-w-[1024px] px-6">
+                    <!-- Rodrigo Valdez -->
+                    <div
+                        class="group relative flex flex-col overflow-hidden rounded-2xl bg-surface-dark border border-white/5 hover:border-primary/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_40px_rgba(139,92,246,0.15)]">
+                        <div class="h-80 w-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+                            style='background-image: url("fori.jpeg"); background-position: center 30%;'></div>
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-surface-dark via-transparent to-transparent opacity-90 h-80">
+                        </div>
+                        <div class="relative z-20 flex flex-col p-8 -mt-16">
+                            <h3 class="text-white text-2xl font-bold leading-tight">Rodrigo Valdez</h3>
+                            <p class="text-primary text-sm font-bold uppercase tracking-wide mt-1">Cloud & Ops Lead</p>
+                            <p class="text-slate-400 text-sm leading-relaxed mt-4 mb-6">
+                                Azure Infrastructure expert specialized in optimizing financial systems for maximum
+                                scalability and security.
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span
+                                    class="px-3 py-1.5 rounded-md bg-black border border-white/5 text-slate-300 text-xs font-medium">Azure
+                                    Expert</span>
+                                <span
+                                    class="px-3 py-1.5 rounded-md bg-black border border-white/5 text-slate-300 text-xs font-medium">DevOps</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Franco Arce -->
+                    <div
+                        class="group relative flex flex-col overflow-hidden rounded-2xl bg-surface-dark border border-white/5 hover:border-primary/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_40px_rgba(139,92,246,0.15)]">
+                        <div class="h-80 w-full bg-cover bg-top transition-transform duration-700 group-hover:scale-105"
+                            style='background-image: url("FotoNuevaGeminiPerfil.png");'></div>
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-surface-dark via-transparent to-transparent opacity-90 h-80">
+                        </div>
+                        <div class="relative z-20 flex flex-col p-8 -mt-16">
+                            <h3 class="text-white text-2xl font-bold leading-tight">Franco Arce</h3>
+                            <p class="text-primary text-sm font-bold uppercase tracking-wide mt-1">Data & Architecture
+                                Lead</p>
+                            <p class="text-slate-400 text-sm leading-relaxed mt-4 mb-6">
+                                Specialized in building high-throughput DataOps pipelines and predictive models for
+                                FinTech and Ed-Tech leaders.
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span
+                                    class="px-3 py-1.5 rounded-md bg-black border border-white/5 text-slate-300 text-xs font-medium">DataOps</span>
+                                <span
+                                    class="px-3 py-1.5 rounded-md bg-black border border-white/5 text-slate-300 text-xs font-medium">ML
+                                    Ops</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Technical Audit Form (Snippet 4) -->
+            <section id="audit" class="w-full flex-grow flex flex-col items-center bg-black py-20 relative px-4">
+                <div class="fixed inset-0 pointer-events-none z-0">
+                    <div
+                        class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary/20 rounded-full blur-[120px] mix-blend-screen">
+                    </div>
+                    <div
+                        class="absolute bottom-[-10%] right-[-10%] w-[30%] h-[30%] bg-cyan-500/10 rounded-full blur-[100px] mix-blend-screen">
+                    </div>
+                </div>
+                <div
+                    class="glass-panel rounded-2xl p-6 md:p-10 w-full max-w-[800px] flex-1 flex flex-col shadow-2xl relative overflow-hidden z-10">
+                    <div
+                        class="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-primary to-transparent opacity-50">
+                    </div>
+                    <div class="flex flex-col gap-3 pb-8 md:pb-12">
+                        <div class="flex gap-6 justify-between items-end">
+                            <div>
+                                <p
+                                    class="text-primary font-bold text-xs uppercase tracking-widest mb-1 drop-shadow-[0_0_8px_rgba(139,92,246,0.6)]">
+                                    Audit Progress</p>
+                                <p class="text-white text-base font-medium leading-normal">Step 1 of 4: Tech Stack</p>
+                            </div>
+                            <p
+                                class="text-white text-sm font-bold leading-normal bg-clip-text text-transparent bg-violet-cyan">
+                                25%</p>
+                        </div>
+                        <div class="h-1.5 w-full rounded-full bg-surface-dark border border-white/5 overflow-hidden">
+                            <div class="h-full rounded-full bg-gradient-to-r from-primary to-cyan-500 shadow-[0_0_10px_rgba(139,92,246,0.5)] transition-all duration-500 ease-out"
+                                style="width: 25%;"></div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-6">
+                        <div class="text-center md:text-left mb-4">
+                            <h1 class="text-white tracking-tight text-3xl md:text-4xl font-bold leading-tight mb-3">
+                                Let's start with your <span
+                                    class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-400">foundation</span>.
+                            </h1>
+                            <p class="text-slate-400 text-lg font-normal leading-relaxed max-w-2xl">
+                                Select the primary environment where your core FinTech applications are hosted.
+                            </p>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <label
+                                class="group relative flex flex-col items-start gap-4 rounded-xl border border-white/10 bg-white/5 p-6 cursor-pointer hover:border-primary/50 hover:bg-white/10 transition-all duration-300">
+                                <input class="peer sr-only" name="tech_stack" type="radio" value="aws" />
+                                <div
+                                    class="size-12 rounded-lg bg-surface-dark border border-white/5 flex items-center justify-center text-slate-400 group-hover:text-white transition-all">
+                                    <span class="material-symbols-outlined text-3xl">cloud</span>
+                                </div>
+                                <p class="text-white text-lg font-bold">Amazon Web Services</p>
+                                <div
+                                    class="absolute inset-0 rounded-xl border-2 border-transparent peer-checked:border-primary peer-checked:bg-primary/5 transition-all">
+                                </div>
+                            </label>
+                            <label
+                                class="group relative flex flex-col items-start gap-4 rounded-xl border border-primary bg-primary/10 p-6 cursor-pointer transition-all">
+                                <input checked="" class="peer sr-only" name="tech_stack" type="radio" value="azure" />
+                                <div
+                                    class="size-12 rounded-lg bg-primary flex items-center justify-center text-white shadow-[0_0_15px_rgba(139,92,246,0.5)]">
+                                    <span class="material-symbols-outlined text-3xl">grid_view</span>
+                                </div>
+                                <p class="text-white text-lg font-bold">Microsoft Azure</p>
+                                <div class="absolute inset-0 rounded-xl border-2 border-primary pointer-events-none">
+                                </div>
+                            </label>
+                        </div>
+                        <button
+                            class="flex w-full items-center justify-center rounded-lg h-12 bg-primary text-white font-bold hover:bg-primary-hover shadow-neon mt-8 transition-all">
+                            Continue to Step 2
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer (Snippet 3 variant) -->
+        <footer class="bg-black border-t border-white/10 py-12 relative z-20">
+            <div
+                class="max-w-[1280px] mx-auto px-4 md:px-10 flex flex-col md:flex-row justify-between items-center gap-8">
+                <div class="flex items-center gap-4 text-white">
+                    <div class="size-6 text-primary opacity-80">
+                        <span class="material-symbols-outlined text-2xl">terminal</span>
+                    </div>
+                    <span class="text-slate-500 text-sm font-medium">© 2024 Codeflow Systems. Powered by
+                        Excellence.</span>
+                </div>
+                <div class="flex gap-8">
+                    <a class="text-slate-500 hover:text-white transition-colors" href="#">LinkedIn</a>
+                    <a class="text-slate-500 hover:text-white transition-colors" href="#">Twitter</a>
+                    <a class="text-slate-500 hover:text-white transition-colors" href="#">Contacto</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Language toggle functionality
+        const translations = {
+            es: {
+                nav: {
+                    services: 'Servicios',
+                    impact: 'Impacto',
+                    founders: 'Fundadores',
+                    audit: 'Auditoría',
+                    schedule: 'Agendar Consulta'
+                },
+                hero: {
+                    badge: 'Microsoft Solutions Partner',
+                    title: 'Automatización de Operaciones y Arquitectura de Datos',
+                    subtitle: 'Impulsamos startups y scale-ups FinTech reduciendo tiempos de procesamiento en un 75% mediante DataOps y arquitectura Azure experta.',
+                    cta1: 'Agendar Auditoría Gratuita',
+                    cta2: 'Ver Casos de Uso',
+                    trust: 'Con la confianza de innovadores FinTech'
+                },
+                features: {
+                    azure: 'Arquitectura Azure',
+                    azureDesc: 'Diseño de infraestructura escalable y segura para el sector financiero.',
+                    dataops: 'DataOps & Analytics',
+                    dataopsDesc: 'Pipelines de datos en tiempo real para decisiones críticas al instante.',
+                    ai: 'Automatización IA',
+                    aiDesc: 'Eliminación de tareas manuales repetitivas mediante modelos inteligentes.'
+                },
+                pillars: {
+                    badge: 'Expertise Técnica',
+                    title: 'Nuestros Pilares Tecnológicos',
+                    subtitle: 'Combinamos inteligencia de datos con infraestructura robusta. Dos áreas de especialización, un solo objetivo: escalar tu FinTech.'
+                },
+                impact: {
+                    badge: 'Métricas de Rendimiento',
+                    title: 'Impacto Real en FinTech',
+                    subtitle: 'Nuestra arquitectura DataOps transforma la velocidad y fiabilidad de sus operaciones financieras.'
+                },
+                founders: {
+                    badge: 'Los Expertos',
+                    title: 'Conoce a los Fundadores',
+                    subtitle: 'Generando confianza a través de la transparencia. Nuestro liderazgo combina décadas de experiencia en infraestructura cloud de alta escala y arquitectura de datos.',
+                    rodrigo: {
+                        role: 'Cloud & Ops Lead',
+                        bio: 'Experto en infraestructura Azure especializado en optimizar sistemas financieros para máxima escalabilidad y seguridad.'
+                    },
+                    franco: {
+                        role: 'Data & Architecture Lead',
+                        bio: 'Especializado en construir pipelines DataOps de alto rendimiento y modelos predictivos para líderes FinTech y Ed-Tech.'
+                    }
+                },
+                footer: {
+                    copyright: '© 2024 Codeflow Systems. Powered by Excellence.'
+                }
+            },
+            en: {
+                nav: {
+                    services: 'Services',
+                    impact: 'Impact',
+                    founders: 'Founders',
+                    audit: 'Audit',
+                    schedule: 'Schedule Consultation'
+                },
+                hero: {
+                    badge: 'Microsoft Solutions Partner',
+                    title: 'Operations Automation and Data Architecture',
+                    subtitle: 'We empower FinTech startups and scale-ups by reducing processing times by 75% through DataOps and expert Azure architecture.',
+                    cta1: 'Schedule Free Audit',
+                    cta2: 'View Use Cases',
+                    trust: 'Trusted by FinTech innovators'
+                },
+                features: {
+                    azure: 'Azure Architecture',
+                    azureDesc: 'Scalable and secure infrastructure design for the financial sector.',
+                    dataops: 'DataOps & Analytics',
+                    dataopsDesc: 'Real-time data pipelines for instant critical decisions.',
+                    ai: 'AI Automation',
+                    aiDesc: 'Elimination of repetitive manual tasks through intelligent models.'
+                },
+                pillars: {
+                    badge: 'Technical Expertise',
+                    title: 'Our Technology Pillars',
+                    subtitle: 'We combine data intelligence with robust infrastructure. Two areas of specialization, one goal: scale your FinTech.'
+                },
+                impact: {
+                    badge: 'Performance Metrics',
+                    title: 'Real Impact in FinTech',
+                    subtitle: 'Our DataOps architecture transforms the speed and reliability of your financial operations.'
+                },
+                founders: {
+                    badge: 'The Experts',
+                    title: 'Meet the Founders',
+                    subtitle: 'Engineering trust through transparency. Our leadership combines decades of experience in high-scale cloud infrastructure and data architecture.',
+                    rodrigo: {
+                        role: 'Cloud & Ops Lead',
+                        bio: 'Azure Infrastructure expert specialized in optimizing financial systems for maximum scalability and security.'
+                    },
+                    franco: {
+                        role: 'Data & Architecture Lead',
+                        bio: 'Specialized in building high-throughput DataOps pipelines and predictive models for FinTech and Ed-Tech leaders.'
+                    }
+                },
+                footer: {
+                    copyright: '© 2024 Codeflow Systems. Powered by Excellence.'
+                }
+            }
+        };
+
+        let currentLang = 'es';
+
+        document.getElementById('langToggle')?.addEventListener('click', function () {
+            currentLang = currentLang === 'es' ? 'en' : 'es';
+            document.getElementById('currentLang').textContent = currentLang.toUpperCase();
+            updateContent(currentLang);
+        });
+
+        function updateContent(lang) {
+            const t = translations[lang];
+
+            // Update navigation links in header
+            const navLinks = document.querySelectorAll('nav a[href^="#"]');
+            navLinks.forEach(link => {
+                const href = link.getAttribute('href');
+                // Skip if it's a button with icon
+                if (link.querySelector('.material-symbols-outlined')) return;
+
+                if (href === '#servicios') link.textContent = t.nav.services;
+                else if (href === '#impacto') link.textContent = t.nav.impact;
+                else if (href === '#nosotros') link.textContent = t.nav.founders;
+                else if (href === '#audit') link.textContent = t.nav.audit;
+            });
+
+            // Update "Agendar Consulta" button in header
+            const headerBtn = document.querySelector('nav a[href="#audit"] span.truncate');
+            if (headerBtn) headerBtn.textContent = t.nav.schedule;
+
+            // Update hero title
+            const heroTitle = document.querySelector('#hero h1');
+            if (heroTitle) {
+                const beforeText = lang === 'es' ? 'Automatización de Operaciones y ' : 'Operations Automation and ';
+                const gradientText = lang === 'es' ? 'Arquitectura de Datos' : 'Data Architecture';
+                heroTitle.innerHTML = beforeText + '<span class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-purple-400 to-accent">' + gradientText + '</span>';
+            }
+
+            // Update hero subtitle
+            const heroSubtitle = document.querySelector('#hero p.text-lg');
+            if (heroSubtitle) {
+                heroSubtitle.textContent = t.hero.subtitle;
+            }
+
+            // Update all buttons with .btn-text class
+            document.querySelectorAll('.btn-text').forEach(btnText => {
+                const parent = btnText.closest('a');
+                if (!parent) return;
+
+                const href = parent.getAttribute('href');
+                if (href === '#audit') {
+                    btnText.textContent = t.hero.cta1;
+                } else if (href === '#impacto') {
+                    btnText.textContent = t.hero.cta2;
+                }
+            });
+
+            // Update trust text
+            const trustText = document.querySelector('#hero p.text-xs');
+            if (trustText) {
+                trustText.textContent = t.hero.trust;
+            }
+
+            // Update Founders section
+            const foundersBadge = document.querySelector('#nosotros span.text-primary');
+            if (foundersBadge) foundersBadge.textContent = t.founders.badge;
+
+            const foundersTitle = document.querySelector('#nosotros h2');
+            if (foundersTitle) foundersTitle.textContent = t.founders.title;
+
+            const foundersSubtitle = document.querySelector('#nosotros > div > p');
+            if (foundersSubtitle) foundersSubtitle.textContent = t.founders.subtitle;
+
+            // Update Rodrigo's card
+            const rodrigoRole = document.querySelectorAll('#nosotros .text-primary')[1];
+            if (rodrigoRole) rodrigoRole.textContent = t.founders.rodrigo.role;
+
+            const rodrigoBio = document.querySelectorAll('#nosotros .text-slate-400')[0];
+            if (rodrigoBio) rodrigoBio.textContent = t.founders.rodrigo.bio;
+
+            // Update Franco's card
+            const francoRole = document.querySelectorAll('#nosotros .text-primary')[2];
+            if (francoRole) francoRole.textContent = t.founders.franco.role;
+
+            const francoBio = document.querySelectorAll('#nosotros .text-slate-400')[1];
+            if (francoBio) francoBio.textContent = t.founders.franco.bio;
+        }
+    </script>
 </body>
+
 
 </html>
