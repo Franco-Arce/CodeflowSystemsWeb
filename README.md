@@ -1,83 +1,136 @@
-<div align="center">
-  <img src="header.svg" width="800" alt="Codeflow Systems Header" />
+# 🚀 Codeflow Systems - Website Oficial
 
-  <p>
-    <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
-    <img src="https://img.shields.io/badge/SQL-4479A1?style=for-the-badge&logo=postgresql&logoColor=white" />
-    <img src="https://img.shields.io/badge/Azure-0089D6?style=for-the-badge&logo=microsoft-azure&logoColor=white" />
-    <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
-    <img src="https://img.shields.io/badge/Power_BI-F2C811?style=for-the-badge&logo=power-bi&logoColor=black" />
-    <img src="https://img.shields.io/badge/Terraform-7B42BC?style=for-the-badge&logo=terraform&logoColor=white" />
-  </p>
+<div align="center">
+  
+  ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+  ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+  ![Azure](https://img.shields.io/badge/Azure-0089D6?style=for-the-badge&logo=microsoft-azure&logoColor=white)
+  ![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
+
+  **Automatización de Operaciones y Arquitectura de Datos para FinTech**
+  
+  [🌐 Ver Sitio](https://codeflow-systems-web.vercel.app/) | [📧 Contacto](mailto:contacto@codeflowsystems.site)
+
 </div>
 
 ---
 
-### 🚀 Inteligencia Operativa & DataOps para FinTech
+## ✨ Características
 
-Transformamos datos crudos en activos financieros de alto rendimiento. Nuestra sinergia combina una **infraestructura robusta** (Cloud & Ops) con **inteligencia de datos estratégica** (Data & AI) para escalar operaciones sin fricción.
+### 🎨 Diseño Premium "Cyber-Noir Violet"
+- **Tema moderno** con paleta de colores violeta (#8b5cf6) y cyan (#06b6d4)
+- **Efectos glassmorphism** en tarjetas y elementos UI
+- **Animaciones sutiles** con Tailwind CSS
+- **Video de fondo dinámico** en la sección hero
+- **100% Responsive** - optimizado para todos los dispositivos
 
-- ⚡ **Aceleración de Eficiencia**: Reducción del **75%** en tiempos de procesamiento mediante pipelines inteligentes.
-- 🛡️ **Confiabilidad**: Garantizamos un **99.9% de disponibilidad** en infraestructura bancaria crítica.
-- 📉 **Escalabilidad**: Automatización del 100% de tareas de soporte técnico recurrente.
+### 🌐 Sistema Bilingüe (ES/EN)
+- Cambio de idioma en tiempo real sin recargar la página
+- Traducciones completas de todas las secciones:
+  - ✅ Navegación
+  - ✅ Hero section
+  - ✅ Features
+  - ✅ Founders
+  - ✅ CTAs y botones
 
----
-
-### 👥 El Dúo Dinámico
-
-| Especialidad | **Cloud & Infrastructure Lead** | **Data & AI Lead** |
-| :--- | :--- | :--- |
-| **Experto** | **Rodrigo Valdez** | **Franco Arce** |
-| **Enfoque** | Azure, Intune, Automatización y Seguridad | Data Lakehouse, ETL, ML y Visualización |
-| **Misión** | Eliminar cuellos de botella operativos | Convertir datos en crecimiento predictivo |
-
----
-
-### 📂 Proyectos Destacados (Bento Style)
-
-<table width="100%">
-  <tr>
-    <td width="50%" valign="top">
-      <h4>💎 <a href="https://codeflow.capital">CodeFlow Capital</a></h4>
-      <i>Plataforma SaaS FinTech</i>
-      <ul>
-        <li>Visualización en tiempo real de tendencias financieras.</li>
-        <li>Reconocimiento automatizado de patrones de gasto.</li>
-        <li><b>Stack</b>: React, Python, SQL, Azure.</li>
-      </ul>
-    </td>
-    <td width="50%" valign="top">
-      <h4>⚙️ Automatización ETL</h4>
-      <i>Eficiencia operativa a escala</i>
-      <ul>
-        <li>Migración de procesos manuales a pipelines automatizados.</li>
-        <li>Impacto: Tiempo de proceso reducido de <b>60 min a 15 min</b>.</li>
-        <li>Integridad de datos garantizada para cumplimiento internacional.</li>
-      </ul>
-    </td>
-  </tr>
-</table>
+### 📱 Secciones Principales
+1. **Hero** - Presentación con video de fondo y CTAs destacados
+2. **Features Strip** - Azure Architecture, DataOps & Analytics, AI Automation
+3. **Pillars** - Data Intelligence & ML, Cloud Ops & Infra
+4. **Impact** - Métricas de rendimiento (75% reducción, 99% disponibilidad, 85% precisión)
+5. **Founders** - Perfiles de Rodrigo Valdez y Franco Arce
+6. **Technical Audit Form** - Formulario interactivo multi-step
 
 ---
 
-### 📊 Estadísticas (⚠️ Servicio Temporalmente Fuera de Línea)
+## 🛠️ Stack Tecnológico
 
-> [!NOTE]
-> Las tarjetas de estadísticas a continuación dependen de un servicio externo (`github-readme-stats`) que actualmente se encuentra pausado por su desarrollador. Volverán a ser visibles automáticamente una vez el servicio sea reactivado.
+- **Framework CSS**: Tailwind CSS (CDN)
+- **JavaScript**: Vanilla JS para traducciones y interactividad
+- **Iconos**: Material Symbols (Google Fonts)
+- **Tipografía**: Manrope (Google Fonts)
+- **Hosting**: Vercel
+- **Control de versiones**: Git/GitHub
+
+---
+
+## 👥 Fundadores
+
+| **Rodrigo Valdez** | **Franco Arce** |
+|:---|:---|
+| **Cloud & Ops Lead** | **Data & Architecture Lead** |
+| Experto en infraestructura Azure especializado en optimizar sistemas financieros para máxima escalabilidad y seguridad | Especializado en construir pipelines DataOps de alto rendimiento y modelos predictivos para líderes FinTech y Ed-Tech |
+| `Azure Expert` `DevOps` | `DataOps` `ML Ops` |
+
+---
+
+## 🚀 Deployment
+
+### Vercel (Producción)
+El sitio está desplegado automáticamente en Vercel:
+- **URL**: https://codeflow-systems-web.vercel.app/
+- **Auto-deploy**: Cada push a `main` dispara un nuevo deployment
+
+### Local Development
+```bash
+# Opción 1: Servidor HTTP simple con Python
+python -m http.server 8000
+
+# Opción 2: Abrir directamente el archivo
+# Abre index.html en tu navegador
+```
+
+Luego visita: `http://localhost:8000`
+
+---
+
+## 📂 Estructura del Proyecto
+
+```
+CodeflowSystems Web/
+├── index.html                          # Página principal
+├── FotoNuevaGeminiPerfil.png          # Foto de Franco Arce
+├── fori.jpeg                          # Foto de Rodrigo Valdez
+├── Generar_Video_de_Imagen_Estática.mp4  # Video de fondo hero
+├── header.svg                         # Logo/header
+├── vercel.json                        # Configuración de Vercel
+└── README.md                          # Este archivo
+```
+
+---
+
+## 🎯 Métricas de Impacto
+
+- ⚡ **75%** reducción en tiempos de procesamiento
+- 🛡️ **99%** disponibilidad en infraestructura crítica
+- 🎯 **85%** precisión en modelos predictivos de IA
+
+---
+
+## 📝 Changelog
+
+### v2.0.0 (Enero 2026)
+- ✨ Rediseño completo con Tailwind CSS
+- 🌐 Sistema bilingüe ES/EN
+- 🎥 Video de fondo dinámico en hero
+- 🖼️ Actualización de imágenes de fundadores
+- 📱 Mejoras de responsividad
+- 🎨 Tema "Cyber-Noir Violet" con efectos glassmorphism
+
+---
+
+## 📧 Contacto
+
+¿Listo para transformar tu FinTech?
+
+- 🌐 **Website**: [codeflow-systems-web.vercel.app](https://codeflow-systems-web.vercel.app/)
+- 📧 **Email**: contacto@codeflowsystems.site
+- 📅 **Agendar Auditoría**: [Calendly](https://calendly.com/)
+
+---
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=Franco-Arce&show_icons=true&theme=tokyonight&count_private=true" alt="GitHub Stats" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Franco-Arce&layout=compact&theme=tokyonight" alt="Top Languages" />
-</div>
-
----
-
-### 📨 Escalemos tu Negocio
-Actualmente aceptamos auditorías de alto impacto para FinTechs y Scale-ups.
-- 📅 **[Agenda una Auditoría de Eficiencia de 15 min](https://calendly.com/)**
-- 🌐 **[codeflowsystems.site](https://codeflowsystems.site)**
-- 📧 **contacto@codeflowsystems.site**
-
-<div align="right">
   <i>Construyendo el futuro de la inteligencia operativa.</i>
+  <br><br>
+  <b>Codeflow Systems © 2024</b>
 </div>
