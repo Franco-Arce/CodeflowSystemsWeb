@@ -112,6 +112,22 @@
         html {
             scroll-behavior: smooth;
         }
+
+        @keyframes video-fade {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            95% {
+                opacity: 0.3;
+            }
+        }
+
+        .video-smooth-loop {
+            animation: video-fade 2s infinite ease-in-out;
+        }
     </style>
 </head>
 
@@ -259,7 +275,8 @@
                                     <div
                                         class="absolute inset-0 bg-gradient-to-tr from-background-dark/90 via-background-dark/20 to-transparent z-10">
                                     </div>
-                                    <video autoplay loop muted playsinline class="absolute w-full h-full object-cover"
+                                    <video autoplay loop muted playsinline
+                                        class="absolute w-full h-full object-cover video-smooth-loop"
                                         style="filter: hue-rotate(260deg) saturate(1.2); position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(1) !important; width: 100%; height: 100%;">
                                         <source src="hero-video.mp4" type="video/mp4">
                                     </video>
@@ -497,13 +514,14 @@
                         <div
                             class="flex flex-col gap-3 rounded-xl p-8 glass-card border-white/10 hover:shadow-neon transition-all duration-300 group">
                             <span
-                                class="material-symbols-outlined text-slate-500 text-3xl group-hover:text-primary transition-colors">dns</span>
+                                class="material-symbols-outlined text-slate-500 text-3xl group-hover:text-primary transition-colors">handshake</span>
                             <div class="flex flex-col gap-1 mt-2">
                                 <p
-                                    class="text-primary tracking-tight text-5xl md:text-6xl font-extrabold leading-tight">
-                                    99%</p>
-                                <p class="text-slate-200 text-base font-bold leading-normal pt-2">Disponibilidad</p>
-                                <p class="text-slate-400 text-sm font-medium leading-normal">de sistemas críticos Azure
+                                    class="text-primary tracking-tight text-4xl md:text-5xl font-extrabold leading-tight">
+                                    1-a-1</p>
+                                <p class="text-slate-200 text-base font-bold leading-normal pt-2">Soporte Directo</p>
+                                <p class="text-slate-400 text-sm font-medium leading-normal">Acompañamiento humano en tu
+                                    evolución tecnológica.
                                 </p>
                             </div>
                         </div>
