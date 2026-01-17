@@ -599,30 +599,33 @@
                             <div>
                                 <p
                                     class="text-primary font-bold text-xs uppercase tracking-widest mb-1 drop-shadow-[0_0_8px_rgba(139,92,246,0.6)]">
-                                    Progreso de Auditoría</p>
-                                <p class="text-white text-base font-medium leading-normal">Paso 1 de 4: Stack
-                                    Tecnológico</p>
+                                    <span id="audit-progress-text">Progreso de Auditoría</span>
+                                </p>
+                                <p id="audit-step-text" class="text-white text-base font-medium leading-normal">Paso 1
+                                    de 4: Stack Tecnológico</p>
                             </div>
-                            <p
+                            <p id="audit-percentage"
                                 class="text-white text-sm font-bold leading-normal bg-clip-text text-transparent bg-violet-cyan">
                                 25%</p>
                         </div>
                         <div class="h-1.5 w-full rounded-full bg-surface-dark border border-white/5 overflow-hidden">
-                            <div class="h-full rounded-full bg-gradient-to-r from-primary to-cyan-500 shadow-[0_0_10px_rgba(139,92,246,0.5)] transition-all duration-500 ease-out"
+                            <div id="audit-progress-bar"
+                                class="h-full rounded-full bg-gradient-to-r from-primary to-cyan-500 shadow-[0_0_10px_rgba(139,92,246,0.5)] transition-all duration-500 ease-out"
                                 style="width: 25%;"></div>
                         </div>
                     </div>
                     <div class="flex flex-col gap-6">
                         <div class="text-center md:text-left mb-4">
-                            <h1 class="text-white tracking-tight text-3xl md:text-4xl font-bold leading-tight mb-3">
+                            <h1 id="audit-title"
+                                class="text-white tracking-tight text-3xl md:text-4xl font-bold leading-tight mb-3">
                                 Comencemos con tu <span
                                     class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-400">base</span>.
                             </h1>
-                            <p class="text-slate-400 text-lg font-normal leading-relaxed max-w-2xl">
+                            <p id="audit-subtitle" class="text-slate-400 text-lg font-normal leading-relaxed max-w-2xl">
                                 Selecciona el entorno principal donde se alojan tus aplicaciones FinTech.
                             </p>
                         </div>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div id="audit-options" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <label
                                 class="group relative flex flex-col items-start gap-4 rounded-xl border border-white/10 bg-white/5 p-6 cursor-pointer hover:border-primary/50 hover:bg-white/10 transition-all duration-300">
                                 <input class="peer sr-only" name="tech_stack" type="radio" value="aws" />
@@ -647,7 +650,7 @@
                                 </div>
                             </label>
                         </div>
-                        <button
+                        <button id="audit-next-btn"
                             class="flex w-full items-center justify-center rounded-lg h-12 bg-primary text-white font-bold hover:bg-primary-hover shadow-neon mt-8 transition-all">
                             Continuar al Paso 2
                         </button>
@@ -668,9 +671,12 @@
                         Excellence.</span>
                 </div>
                 <div class="flex gap-8">
-                    <a class="text-slate-500 hover:text-white transition-colors" href="#">LinkedIn</a>
-                    <a class="text-slate-500 hover:text-white transition-colors" href="#">Twitter</a>
-                    <a class="text-slate-500 hover:text-white transition-colors" href="#">Contacto</a>
+                    <a class="text-slate-500 hover:text-white transition-colors"
+                        href="https://www.linkedin.com/in/franco-arce-37a83a220/" target="_blank">LinkedIn</a>
+                    <a class="text-slate-500 hover:text-white transition-colors"
+                        href="https://www.instagram.com/franc07_/" target="_blank">Instagram</a>
+                    <a class="text-slate-500 hover:text-white transition-colors"
+                        href="mailto:Francogonzaloarce@gmail.com">Contacto</a>
                 </div>
             </div>
         </footer>
