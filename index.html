@@ -15,11 +15,13 @@
     <nav id="navbar">
         <div class="container nav-container">
             <div class="brand">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="16 18 22 12 16 6"></polyline>
-                    <polyline points="8 6 2 12 8 18"></polyline>
-                </svg>
+                <div class="brand-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="16 18 22 12 16 6"></polyline>
+                        <polyline points="8 6 2 12 8 18"></polyline>
+                    </svg>
+                </div>
                 CODEFLOW <span>SYSTEMS</span>
             </div>
             <ul class="nav-links">
@@ -34,15 +36,43 @@
     </nav>
 
     <header class="hero">
+        <!-- Floating Background Decor -->
+        <div class="bg-decor cloud-1">☁️</div>
+        <div class="bg-decor nodes-1">
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="20" cy="20" r="2" fill="currentColor" />
+                <circle cx="180" cy="50" r="2" fill="currentColor" />
+                <circle cx="100" cy="150" r="2" fill="currentColor" />
+                <path d="M20 20 L180 50 L100 150 Z" fill="none" stroke="currentColor" stroke-width="0.5"
+                    stroke-dasharray="4 4" />
+            </svg>
+        </div>
+        <div class="bg-decor nodes-2">
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="180" r="1.5" fill="currentColor" />
+                <circle cx="150" cy="20" r="1.5" fill="currentColor" />
+                <path d="M50 180 L150 20" fill="none" stroke="currentColor" stroke-width="0.5"
+                    stroke-dasharray="10 5" />
+            </svg>
+        </div>
+        <div class="bg-decor nodes-3">
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="10" cy="100" r="1" fill="currentColor" />
+                <circle cx="190" cy="100" r="1" fill="currentColor" />
+                <path d="M10 100 Q100 0 190 100" fill="none" stroke="currentColor" stroke-width="0.3"
+                    stroke-dasharray="2 2" />
+            </svg>
+        </div>
+
         <div class="container">
             <div class="hero-content">
-                <span class="badge">Expertos en FinTech</span>
+                <span class="badge"><span class="pulse"></span> Expertos en FinTech</span>
                 <h1>Automatización y <span>Arquitectura de Datos</span></h1>
                 <p>Optimizamos infraestructuras en la nube y transformamos datos en activos estratégicos.
                     <strong>Reducción de tiempos en un 75%</strong> garantizando continuidad operativa.
                 </p>
                 <div class="hero-actions">
-                    <a href="#contacto" class="btn btn-primary">Agendar Auditoría Gratis</a>
+                    <a href="#contacto" class="btn btn-primary">Agendar Auditoría Gratis ✨</a>
                     <a href="#soluciones" class="btn btn-outline">Ver Soluciones</a>
                 </div>
             </div>
@@ -50,31 +80,53 @@
                 <div class="dashboard-mockup glass">
                     <div class="mock-nav">
                         <div class="circles"><span></span><span></span><span></span></div>
+                        <div class="mock-user">👤</div>
                     </div>
                     <div class="mock-body">
                         <div class="mock-sidebar">
+                            <div class="item active"></div>
                             <div class="item"></div>
                             <div class="item"></div>
                             <div class="item"></div>
                         </div>
                         <div class="mock-content">
-                            <div class="mock-header-row">
-                                <div class="mock-title">Key Data Intelligence</div>
-                            </div>
-                            <div class="mock-grid">
-                                <div class="mock-stat">
-                                    <span>Efficiency Boost</span>
-                                    <div class="value">+75%</div>
+                            <div class="mock-top-stats">
+                                <div class="mini-card">
+                                    <small>Revenue</small>
+                                    <strong>$24,780</strong>
                                 </div>
-                                <div class="mock-chart-small"></div>
+                                <div class="mini-card">
+                                    <small>Growth</small>
+                                    <strong class="up">+15%</strong>
+                                </div>
                             </div>
-                            <div class="mock-chart-large"></div>
+                            <div class="mock-main-chart">
+                                <div class="chart-bars">
+                                    <div class="bar" style="height: 40%"></div>
+                                    <div class="bar" style="height: 70%"></div>
+                                    <div class="bar" style="height: 50%"></div>
+                                    <div class="bar" style="height: 90%"></div>
+                                    <div class="bar" style="height: 60%"></div>
+                                </div>
+                            </div>
+                            <div class="mock-bottom-row">
+                                <div class="mock-circle-stat">
+                                    <svg viewBox="0 0 36 36" class="circular-chart">
+                                        <path class="circle" stroke-dasharray="75, 100"
+                                            d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                    </svg>
+                                </div>
+                                <div class="mock-list">
+                                    <div class="list-item"></div>
+                                    <div class="list-item"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="floating-glass glass">
-                    <span class="label">Total Savings</span>
-                    <div class="value">-$45k</div>
+                <div class="floating-glass glass glow-card">
+                    <span class="label">Efficiency Boost</span>
+                    <div class="value">+75%</div>
                 </div>
             </div>
         </div>
@@ -176,9 +228,14 @@
                 </div>
                 <div class="bento-card footer-map-card glass">
                     <div class="map-placeholder">
-                        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                            <path fill="currentColor"
-                                d="M100 0C44.8 0 0 44.8 0 100s44.8 100 100 100 100-44.8 100-100S155.2 0 100 0zm0 180c-44.1 0-80-35.9-80-80s35.9-80 80-80 80 35.9 80 80-35.9 80-80 80z" />
+                        <svg viewBox="0 0 400 600" xmlns="http://www.w3.org/2000/svg" class="map-svg">
+                            <!-- stylized Southern Cone / Argentina path -->
+                            <path fill="currentColor" opacity="0.15"
+                                d="M120,50 L180,40 L210,120 L230,180 L220,250 L180,400 L150,550 L130,580 L110,550 L100,450 L110,300 L100,150 Z" />
+                            <circle cx="150" cy="300" r="120" fill="none" stroke="currentColor" stroke-width="0.5"
+                                opacity="0.1" />
+                            <circle cx="150" cy="300" r="200" fill="none" stroke="currentColor" stroke-width="0.5"
+                                opacity="0.05" />
                         </svg>
                         <div class="map-marker marker-ba">
                             <div class="marker-point"></div>
