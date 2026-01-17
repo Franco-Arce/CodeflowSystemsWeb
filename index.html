@@ -735,22 +735,31 @@
                 audit: {
                     progress: 'Progreso de Auditoría',
                     step: 'Paso {current} de 5: {name}',
-                    stepsNames: ['Stack Tecnológico', 'Volumen de Datos', 'Objetivo Principal', 'Tu Problema', 'Contacto'],
+                    stepsNames: ['Tu Problema', 'Stack Tecnológico', 'Volumen de Datos', 'Objetivo Principal', 'Contacto'],
                     button: 'Continuar al Paso {next}',
                     finishButton: 'Solicitar Auditoría',
                     stepsData: [
                         {
-                            title: 'Comencemos con tu <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-400">base</span>.',
-                            subtitle: 'Selecciona el entorno principal donde se alojan tus aplicaciones.',
+                            title: 'Describe tu <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-400">problema</span>.',
+                            subtitle: 'Cuéntanos brevemente qué obstáculo enfrenta tu empresa actualmente.',
+                            inputType: 'textarea',
+                            placeholder: 'Ej: Perdemos mucho tiempo en reportes manuales...'
+                        },
+                        {
+                            title: 'Stack <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-400">Tecnológico</span>.',
+                            subtitle: 'Selecciona las herramientas que utilizas actualemente (puedes marcar varias).',
+                            inputType: 'checkbox',
                             options: [
                                 { icon: 'cloud', label: 'Amazon Web Services', value: 'aws' },
                                 { icon: 'grid_view', label: 'Microsoft Azure', value: 'azure' },
+                                { icon: 'table_view', label: 'Hojas de Cálculo', value: 'spreadsheets' },
                                 { icon: 'dns', label: 'On-Premise / Otro', value: 'other' }
                             ]
                         },
                         {
                             title: '¿Cuál es tu volumen de <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-400">datos</span>?',
                             subtitle: 'Estima el volumen de datos que procesas mensualmente.',
+                            inputType: 'radio',
                             options: [
                                 { icon: 'database', label: 'Menos de 1TB', value: 'small' },
                                 { icon: 'storage', label: '1TB - 50TB', value: 'medium' },
@@ -760,17 +769,12 @@
                         {
                             title: 'Definamos tu <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-400">meta</span>.',
                             subtitle: '¿Cuál es el principal desafío que buscas resolver?',
+                            inputType: 'radio',
                             options: [
                                 { icon: 'trending_down', label: 'Reducción de Costos', value: 'cost' },
                                 { icon: 'speed', label: 'Velocidad de Procesamiento', value: 'speed' },
                                 { icon: 'scale', label: 'Escalabilidad', value: 'scale' }
                             ]
-                        },
-                        {
-                            title: 'Describe tu <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-400">problema</span>.',
-                            subtitle: 'Cuéntanos brevemente qué obstáculo enfrenta tu empresa actualmente.',
-                            inputType: 'textarea',
-                            placeholder: 'Ej: Perdemos mucho tiempo en reportes manuales...'
                         },
                         {
                             title: 'Recibe tu <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-400">plan</span>.',
@@ -834,22 +838,31 @@
                 audit: {
                     progress: 'Audit Progress',
                     step: 'Step {current} of 5: {name}',
-                    stepsNames: ['Tech Stack', 'Data Volume', 'Main Goal', 'Your Problem', 'Contact'],
+                    stepsNames: ['Your Problem', 'Tech Stack', 'Data Volume', 'Main Goal', 'Contact'],
                     button: 'Continue to Step {next}',
                     finishButton: 'Request Audit',
                     stepsData: [
                         {
-                            title: 'Let\'s start with your <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-400">foundation</span>.',
-                            subtitle: 'Select the primary environment where your applications are hosted.',
+                            title: 'Describe your <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-400">problem</span>.',
+                            subtitle: 'Briefly tell us what obstacle your company is currently facing.',
+                            inputType: 'textarea',
+                            placeholder: 'Ex: We waste a lot of time on manual reporting...'
+                        },
+                        {
+                            title: 'Tech <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-400">Stack</span>.',
+                            subtitle: 'Select the tools you currently use (you can select multiple).',
+                            inputType: 'checkbox',
                             options: [
                                 { icon: 'cloud', label: 'Amazon Web Services', value: 'aws' },
                                 { icon: 'grid_view', label: 'Microsoft Azure', value: 'azure' },
+                                { icon: 'table_view', label: 'Spreadsheets', value: 'spreadsheets' },
                                 { icon: 'dns', label: 'On-Premise / Other', value: 'other' }
                             ]
                         },
                         {
                             title: 'What is your <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-400">data volume</span>?',
                             subtitle: 'Estimate the volume of data you process monthly.',
+                            inputType: 'radio',
                             options: [
                                 { icon: 'database', label: 'Less than 1TB', value: 'small' },
                                 { icon: 'storage', label: '1TB - 50TB', value: 'medium' },
@@ -859,17 +872,12 @@
                         {
                             title: 'Define your <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-400">goal</span>.',
                             subtitle: 'What is the main challenge you are looking to solve?',
+                            inputType: 'radio',
                             options: [
                                 { icon: 'trending_down', label: 'Cost Reduction', value: 'cost' },
                                 { icon: 'speed', label: 'Processing Speed', value: 'speed' },
                                 { icon: 'scale', label: 'Scalability', value: 'scale' }
                             ]
-                        },
-                        {
-                            title: 'Describe your <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-400">problem</span>.',
-                            subtitle: 'Briefly tell us what obstacle your company is currently facing.',
-                            inputType: 'textarea',
-                            placeholder: 'Ex: We waste a lot of time on manual reporting...'
                         },
                         {
                             title: 'Get your <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-400">roadmap</span>.',
@@ -888,6 +896,7 @@
         let currentLang = 'es';
         let currentStep = 1;
         const totalSteps = 5;
+        let auditAnswers = {};
 
         document.getElementById('langToggle')?.addEventListener('click', function () {
             currentLang = currentLang === 'es' ? 'en' : 'es';
@@ -898,22 +907,87 @@
 
         // Initialize audit form functionality
         document.getElementById('audit-next-btn')?.addEventListener('click', function () {
+            // Validate and Save current step data
+            const currentStepData = translations[currentLang].audit.stepsData[currentStep - 1];
+
+            if (currentStepData.inputType === 'textarea') {
+                const textarea = document.querySelector('textarea');
+                if (!textarea || !textarea.value.trim()) {
+                    alert(currentLang === 'es' ? 'Por favor completa este campo.' : 'Please complete this field.');
+                    return;
+                }
+                auditAnswers[`step${currentStep}`] = textarea.value.trim();
+            } else if (currentStepData.inputType === 'email') {
+                const input = document.querySelector('input[type="email"]');
+                if (!input || !input.value.trim() || !input.value.includes('@')) {
+                    alert(currentLang === 'es' ? 'Por favor ingresa un email válido.' : 'Please enter a valid email.');
+                    return;
+                }
+                auditAnswers[`step${currentStep}`] = input.value.trim();
+            } else if (currentStepData.inputType === 'checkbox') {
+                const checked = Array.from(document.querySelectorAll('input[type="checkbox"]:checked')).map(cb => cb.value);
+                if (checked.length === 0) {
+                    alert(currentLang === 'es' ? 'Por favor selecciona al menos una opción.' : 'Please select at least one option.');
+                    return;
+                }
+                auditAnswers[`step${currentStep}`] = checked.join(', ');
+            } else { // radio
+                const checked = document.querySelector('input[type="radio"]:checked');
+                if (!checked) {
+                    alert(currentLang === 'es' ? 'Por favor selecciona una opción.' : 'Please select an option.');
+                    return;
+                }
+                auditAnswers[`step${currentStep}`] = checked.value;
+            }
+
             if (currentStep < totalSteps) {
                 currentStep++;
                 renderAuditStep(currentStep);
             } else {
-                // Submit action (simulated)
+                // Submit action via Mailto
                 const btn = this;
                 const originalText = btn.textContent;
-                btn.textContent = currentLang === 'es' ? 'Enviando...' : 'Sending...';
+                btn.textContent = currentLang === 'es' ? 'Generando...' : 'Generating...';
                 btn.disabled = true;
+
+                // Construct Email Body
+                const subject = currentLang === 'es' ? 'Nueva Solicitud de Auditoría - Codeflow Systems' : 'New Audit Request - Codeflow Systems';
+                const body = `
+${currentLang === 'es' ? 'Hola Codeflow Systems,' : 'Hello Codeflow Systems,'}
+
+${currentLang === 'es' ? 'Me gustaría solicitar una auditoría técnica. Aquí están mis detalles:' : 'I would like to request a technical audit. Here are my details:'}
+
+1. ${translations[currentLang].audit.stepsNames[0]} (Problem):
+${auditAnswers.step1}
+
+2. ${translations[currentLang].audit.stepsNames[1]} (Stack):
+${auditAnswers.step2}
+
+3. ${translations[currentLang].audit.stepsNames[2]} (Volume):
+${auditAnswers.step3}
+
+4. ${translations[currentLang].audit.stepsNames[3]} (Goal):
+${auditAnswers.step4}
+
+5. ${translations[currentLang].audit.stepsNames[4]} (Email):
+${auditAnswers.step5}
+
+${currentLang === 'es' ? 'Espero su respuesta.' : 'Awaiting your response.'}
+                `.trim();
+
+                const mailtoLink = `mailto:Francogonzaloarce@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
                 setTimeout(() => {
-                    alert(currentLang === 'es' ? '¡Gracias! Te contactaremos pronto.' : 'Thank you! We will contact you soon.');
-                    btn.textContent = originalText;
-                    btn.disabled = false;
-                    currentStep = 1;
-                    renderAuditStep(currentStep);
-                }, 1500);
+                    window.location.href = mailtoLink;
+                    setTimeout(() => {
+                        btn.textContent = originalText;
+                        btn.disabled = false;
+                        // Optional: Reset form
+                        // currentStep = 1;
+                        // auditAnswers = {};
+                        // renderAuditStep(currentStep);
+                    }, 1000);
+                }, 1000);
             }
         });
 
@@ -928,17 +1002,25 @@
             document.getElementById('audit-percentage').textContent = percentage + '%';
             document.getElementById('audit-progress-bar').style.width = percentage + '%';
 
+            // Update Button Text
+            const nextBtn = document.getElementById('audit-next-btn');
+            if (step === totalSteps) {
+                nextBtn.textContent = t.finishButton;
+            } else {
+                nextBtn.textContent = t.button.replace('{next}', step + 1);
+            }
+
             // Update Content
             document.getElementById('audit-title').innerHTML = stepData.title;
             document.getElementById('audit-subtitle').textContent = stepData.subtitle;
 
             // Update Options / Input
             const optionsContainer = document.getElementById('audit-options');
+            optionsContainer.className = 'grid grid-cols-1 sm:grid-cols-2 gap-4'; // Default grid
             optionsContainer.innerHTML = ''; // Clear previous content
 
             if (stepData.inputType === 'email') {
-                // Render Email Input
-                optionsContainer.className = 'w-full'; // Remove grid for single input
+                optionsContainer.className = 'w-full';
                 optionsContainer.innerHTML = `
                     <div class="w-full">
                         <input type="email" placeholder="${stepData.placeholder}" 
@@ -947,7 +1029,6 @@
                     </div>
                 `;
             } else if (stepData.inputType === 'textarea') {
-                // Render Textarea
                 optionsContainer.className = 'w-full';
                 optionsContainer.innerHTML = `
                     <div class="w-full">
@@ -956,57 +1037,66 @@
                         ></textarea>
                     </div>
                 `;
-            } else {
-                // Render Radio Options
-                optionsContainer.className = 'grid grid-cols-1 sm:grid-cols-2 gap-4'; // Restore grid
-                stepData.options.forEach((opt, index) => {
-                    const isChecked = index === 0 ? 'checked' : '';
-                    const html = `
-                        <label class="group relative flex flex-col items-start gap-4 rounded-xl border ${isChecked ? 'border-primary bg-primary/10' : 'border-white/10 bg-white/5'} p-6 cursor-pointer hover:border-primary/50 hover:bg-white/10 transition-all duration-300" onclick="selectAuditOption(this)">
-                            <input ${isChecked} class="peer sr-only" name="audit_step_${step}" type="radio" value="${opt.value}" />
-                            <div class="size-12 rounded-lg ${isChecked ? 'bg-primary' : 'bg-surface-dark border border-white/5'} flex items-center justify-center ${isChecked ? 'text-white' : 'text-slate-400'} group-hover:text-white transition-all">
-                                <span class="material-symbols-outlined text-3xl">${opt.icon}</span>
-                            </div>
-                            <p class="text-white text-lg font-bold">${opt.label}</p>
-                            <div class="absolute inset-0 rounded-xl border-2 ${isChecked ? 'border-primary' : 'border-transparent'} pointer-events-none transition-all"></div>
-                        </label>
+            } else if (stepData.inputType === 'checkbox') {
+                // Checkbox Options
+                stepData.options.forEach(opt => {
+                    const label = document.createElement('label');
+                    label.className = 'group relative flex flex-col items-start gap-4 rounded-xl border border-white/10 bg-white/5 p-6 cursor-pointer hover:border-primary/50 hover:bg-white/10 transition-all duration-300';
+                    label.innerHTML = `
+                        <input class="peer sr-only" name="audit_option" type="checkbox" value="${opt.value}" />
+                        <div class="size-12 rounded-lg bg-surface-dark border border-white/5 flex items-center justify-center text-slate-400 group-hover:text-white transition-all peer-checked:bg-primary peer-checked:text-white peer-checked:shadow-[0_0_15px_rgba(139,92,246,0.5)]">
+                            <span class="material-symbols-outlined text-3xl">${opt.icon}</span>
+                        </div>
+                        <p class="text-white text-lg font-bold">${opt.label}</p>
+                        <div class="absolute inset-0 rounded-xl border-2 border-transparent peer-checked:border-primary peer-checked:bg-primary/5 transition-all pointer-events-none"></div>
                     `;
-                    optionsContainer.insertAdjacentHTML('beforeend', html);
+                    optionsContainer.appendChild(label);
                 });
-            }
-
-            // Update Button
-            const nextBtn = document.getElementById('audit-next-btn');
-            if (step < totalSteps) {
-                nextBtn.textContent = t.button.replace('{next}', step + 1);
             } else {
-                nextBtn.textContent = t.finishButton;
+                // Radio Options (Default)
+                stepData.options.forEach(opt => {
+                    const label = document.createElement('label');
+                    label.className = 'group relative flex flex-col items-start gap-4 rounded-xl border border-white/10 bg-white/5 p-6 cursor-pointer hover:border-primary/50 hover:bg-white/10 transition-all duration-300';
+                    label.innerHTML = `
+                        <input class="sr-only" name="audit_option" type="radio" value="${opt.value}" onchange="selectAuditOption(this)" />
+                        <div class="size-12 rounded-lg bg-surface-dark border border-white/5 flex items-center justify-center text-slate-400 group-hover:text-white transition-all">
+                            <span class="material-symbols-outlined text-3xl">${opt.icon}</span>
+                        </div>
+                        <p class="text-white text-lg font-bold">${opt.label}</p>
+                        <div class="absolute inset-0 rounded-xl border-2 border-transparent transition-all pointer-events-none indicator"></div>
+                    `;
+                    optionsContainer.appendChild(label);
+                });
             }
         }
 
-        // Helper for radio selection styling
-        window.selectAuditOption = function (label) {
+        function selectAuditOption(input) {
+            // Helper for radio buttons only
             // Reset all siblings
-            const parent = label.parentElement;
-            const siblings = parent.querySelectorAll('label');
-            siblings.forEach(sib => {
-                sib.className = 'group relative flex flex-col items-start gap-4 rounded-xl border border-white/10 bg-white/5 p-6 cursor-pointer hover:border-primary/50 hover:bg-white/10 transition-all duration-300';
-                const iconContainer = sib.querySelector('div');
-                iconContainer.className = 'size-12 rounded-lg bg-surface-dark border border-white/5 flex items-center justify-center text-slate-400 group-hover:text-white transition-all';
-                const borderDiv = sib.querySelector('div:last-child');
-                borderDiv.className = 'absolute inset-0 rounded-xl border-2 border-transparent pointer-events-none transition-all';
+            const container = document.getElementById('audit-options');
+            const allLabels = container.querySelectorAll('label');
+
+            allLabels.forEach(lbl => {
+                const ind = lbl.querySelector('.indicator');
+                const iconBox = lbl.querySelector('.size-12');
+
+                ind.classList.remove('border-primary', 'bg-primary/5');
+                ind.classList.add('border-transparent');
+
+                iconBox.classList.remove('bg-primary', 'text-white', 'shadow-[0_0_15px_rgba(139,92,246,0.5)]');
+                iconBox.classList.add('bg-surface-dark', 'text-slate-400');
             });
 
-            // Set active style
-            label.className = 'group relative flex flex-col items-start gap-4 rounded-xl border border-primary bg-primary/10 p-6 cursor-pointer transition-all';
-            const activeIcon = label.querySelector('div');
-            activeIcon.className = 'size-12 rounded-lg bg-primary flex items-center justify-center text-white shadow-[0_0_15px_rgba(139,92,246,0.5)]';
-            const activeBorder = label.querySelector('div:last-child');
-            activeBorder.className = 'absolute inset-0 rounded-xl border-2 border-primary pointer-events-none';
+            // Set active
+            const parent = input.closest('label');
+            const indicator = parent.querySelector('.indicator');
+            const iconBox = parent.querySelector('.size-12');
 
-            // Set radio checked
-            const input = label.querySelector('input');
-            input.checked = true;
+            indicator.classList.remove('border-transparent');
+            indicator.classList.add('border-primary', 'bg-primary/5');
+
+            iconBox.classList.remove('bg-surface-dark', 'text-slate-400');
+            iconBox.classList.add('bg-primary', 'text-white', 'shadow-[0_0_15px_rgba(139,92,246,0.5)]');
         }
 
         function updateContent(lang) {
