@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codeflow Systems | Automatización & Data Intelligence FinTech</title>
+    <meta name="description"
+        content="Escalamos tu FinTech con Inteligencia de Datos y Automatización de Infraestructura. Reducción del 75% en tiempos operativos.">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="footer-map.css">
+</head>
+
+<body>
+
+    <nav id="navbar">
+        <div class="container nav-container">
+            <div class="brand">
+                <div class="brand-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="16 18 22 12 16 6"></polyline>
+                        <polyline points="8 6 2 12 8 18"></polyline>
+                    </svg>
+                </div>
+                CODEFLOW <span>SYSTEMS</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#soluciones">Soluciones</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#equipo">Equipo</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="#contacto" class="btn btn-primary">Agendar Auditoría</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <!-- Floating Background Decor -->
+        <div class="bg-decor cloud-1"></div>
+        <div class="bg-decor nodes-1">
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="20" cy="20" r="3" fill="currentColor" />
+                <circle cx="180" cy="50" r="3" fill="currentColor" />
+                <circle cx="100" cy="150" r="3" fill="currentColor" />
+                <path d="M20 20 L180 50 L100 150 Z" fill="none" stroke="currentColor" stroke-width="1.5"
+                    stroke-dasharray="4 4" />
+            </svg>
+        </div>
+        <div class="bg-decor nodes-2">
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="180" r="2.5" fill="currentColor" />
+                <circle cx="150" cy="20" r="2.5" fill="currentColor" />
+                <path d="M50 180 L150 20" fill="none" stroke="currentColor" stroke-width="1.2"
+                    stroke-dasharray="10 5" />
+            </svg>
+        </div>
+        <div class="bg-decor nodes-3">
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="10" cy="100" r="2" fill="currentColor" />
+                <circle cx="190" cy="100" r="2" fill="currentColor" />
+                <path d="M10 100 Q100 0 190 100" fill="none" stroke="currentColor" stroke-width="1"
+                    stroke-dasharray="2 2" />
+            </svg>
+        </div>
+
+        <div class="container">
+            <div class="hero-content">
+                <span class="badge"><span class="pulse"></span> Expertos en FinTech</span>
+                <h1>Automatización y <span>Arquitectura de Datos</span></h1>
+                <p>Optimizamos infraestructuras en la nube y transformamos datos en activos estratégicos.
+                    <strong>Reducción de tiempos en un 75%</strong> garantizando continuidad operativa.
+                </p>
+                <div class="hero-actions">
+                    <a href="#contacto" class="btn btn-primary">Agendar Auditoría Gratis ✨</a>
+                    <a href="#soluciones" class="btn btn-outline">Ver Soluciones</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="dashboard-mockup glass">
+                    <div class="mock-nav">
+                        <div class="circles"><span></span><span></span><span></span></div>
+                        <div class="mock-user">👤</div>
+                    </div>
+                    <div class="mock-body">
+                        <div class="mock-sidebar">
+                            <div class="item active"></div>
+                            <div class="item"></div>
+                            <div class="item"></div>
+                            <div class="item"></div>
+                        </div>
+                        <div class="mock-content">
+                            <div class="mock-top-stats">
+                                <div class="mini-card">
+                                    <small>Revenue</small>
+                                    <strong>$24,780</strong>
+                                </div>
+                                <div class="mini-card">
+                                    <small>Growth</small>
+                                    <strong class="up">+15%</strong>
+                                </div>
+                            </div>
+                            <div class="mock-main-chart">
+                                <div class="chart-bars">
+                                    <div class="bar" style="height: 40%"></div>
+                                    <div class="bar" style="height: 70%"></div>
+                                    <div class="bar" style="height: 50%"></div>
+                                    <div class="bar" style="height: 90%"></div>
+                                    <div class="bar" style="height: 60%"></div>
+                                </div>
+                            </div>
+                            <div class="mock-bottom-row">
+                                <div class="mock-circle-stat">
+                                    <svg viewBox="0 0 36 36" class="circular-chart">
+                                        <path class="circle" stroke-dasharray="75, 100"
+                                            d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                    </svg>
+                                </div>
+                                <div class="mock-list">
+                                    <div class="list-item"></div>
+                                    <div class="list-item"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="floating-glass glass glow-card">
+                    <span class="label">Efficiency Boost</span>
+                    <div class="value">+75%</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="soluciones" class="pillars">
+        <div class="container">
+            <h2 class="section-title">Nuestros Pilares de Crecimiento</h2>
+            <p class="section-subtitle">Especializados en la intersección entre la ingeniería de datos y la robustez de
+                la infraestructura.</p>
+
+            <div class="pillar-grid">
+                <div class="pillar-card glass">
+                    <div class="icon">📊</div>
+                    <h3>Data Intelligence & ML</h3>
+                    <ul>
+                        <li>Pipelines ETL Automatizados</li>
+                        <li>Dashboards Estratégicos</li>
+                        <li>Modelos Predictivos</li>
+                    </ul>
+                </div>
+                <div class="pillar-card glass">
+                    <div class="icon">☁️</div>
+                    <h3>Cloud Ops & Infra</h3>
+                    <ul>
+                        <li>Gestión de Infraestructura Azure</li>
+                        <li>Automatización de Soporte</li>
+                        <li>Garantía de Continuidad 99%</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="roi-calculator glass">
+        <div class="container">
+            <h3>Calcula tu Potencial de Optimización</h3>
+            <p>¿Cuánto tiempo recuperaría tu equipo con nuestra automatización?</p>
+            <div class="calc-wrapper">
+                <div class="input-group">
+                    <label>Horas manuales por semana</label>
+                    <input type="range" id="hoursInput" min="0" max="100" value="40">
+                    <span id="hoursValue">40h</span>
+                </div>
+                <div class="results">
+                    <div class="result-item">
+                        <label>Ahorro Mensual</label>
+                        <div id="monthlySaving" class="value">120h</div>
+                    </div>
+                    <div class="result-item">
+                        <label>Retorno Operativo</label>
+                        <div id="roiMultiplier" class="value">3.6x</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="equipo" class="founders">
+        <div class="container">
+            <h2 class="section-title">The Founders</h2>
+            <p class="section-subtitle">Liderazgo técnico con visión de negocio.</p>
+
+            <div class="founder-grid">
+                <div class="founder-card glass">
+                    <div class="founder-img"
+                        style="background-image: url('https://francoarce.site/assets/profile.jpg');"></div>
+                    <div class="founder-info">
+                        <h3>Rodrigo Valdez</h3>
+                        <p class="role">Co-Founder & Cloud Ops</p>
+                        <p class="desc">Especialista en infraestructura bancaria y automatización de procesos críticos
+                            en Azure.</p>
+                    </div>
+                </div>
+                <div class="founder-card glass">
+                    <div class="founder-img"
+                        style="background-image: url('https://francoarce.site/assets/profile.jpg');"></div>
+                    <div class="founder-info">
+                        <h3>Franco Arce</h3>
+                        <p class="role">Co-Founder & Data Lead</p>
+                        <p class="desc">Experto en arquitectura Data Lakehouse y reducción de tiempos operativos
+                            mediante IA.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer id="contacto">
+        <div class="container footer-container">
+            <div class="footer-content">
+                <h2>¿Listo para escalar?</h2>
+                <p>No somos solo consultores, somos tu partner tecnológico. Hablemos sobre cómo optimizar tu operación
+                    hoy.</p>
+
+                <div class="contact-info">
+                    <div class="info-item">
+                        <span class="icon">📍</span>
+                        <span>Buenos Aires & Córdoba, Argentina (Servicio Global)</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="icon">📧</span>
+                        <span>contacto@codeflowsystems.com</span>
+                    </div>
+                </div>
+
+                <div class="tech-stack">
+                    <span class="tech-badge">Azure</span>
+                    <span class="tech-badge">Python</span>
+                    <span class="tech-badge">SQL</span>
+                    <span class="tech-badge">React</span>
+                    <span class="tech-badge">Power BI</span>
+                    <span class="tech-badge">Intune</span>
+                </div>
+
+                <a href="https://calendly.com/codeflowsystems" target="_blank" class="btn btn-primary">Agendar Llamada
+                    en Calendly →</a>
+            </div>
+
+            <div class="footer-map-wrapper">
+                <div id="map" class="interactive-map"></div>
+                <div class="map-overlay glass">
+                    <h4>NUESTRAS SEDES</h4>
+                    <p>Presencia estratégica en Argentina para soporte en tiempo real en toda América y Europa.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <p>© 2024 Codeflow Systems. Todos los derechos reservados.</p>
+                <div class="team">
+                    <p>Fundado por Rodrigo Valdez & Franco Arce</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="map.js"></script>
+
+</body>
+
+</html>
