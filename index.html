@@ -667,7 +667,7 @@
                     <div class="size-6 text-primary opacity-80">
                         <span class="material-symbols-outlined text-2xl">terminal</span>
                     </div>
-                    <span class="text-slate-500 text-sm font-medium">© 2024 Codeflow Systems. Powered by
+                    <span class="text-slate-500 text-sm font-medium">© 2026 Codeflow Systems. Powered by
                         Excellence.</span>
                 </div>
                 <div class="flex gap-8">
@@ -734,13 +734,47 @@
                 },
                 audit: {
                     progress: 'Progreso de Auditoría',
-                    step: 'Paso 1 de 4: Stack Tecnológico',
-                    title: 'Comencemos con tu base',
-                    subtitle: 'Selecciona el entorno principal donde se alojan tus aplicaciones FinTech.',
-                    button: 'Continuar al Paso 2'
+                    step: 'Paso {current} de 4: {name}',
+                    stepsNames: ['Stack Tecnológico', 'Volumen de Datos', 'Objetivo Principal', 'Contacto'],
+                    button: 'Continuar al Paso {next}',
+                    finishButton: 'Solicitar Auditoría',
+                    stepsData: [
+                        {
+                            title: 'Comencemos con tu <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-400">base</span>.',
+                            subtitle: 'Selecciona el entorno principal donde se alojan tus aplicaciones FinTech.',
+                            options: [
+                                { icon: 'cloud', label: 'Amazon Web Services', value: 'aws' },
+                                { icon: 'grid_view', label: 'Microsoft Azure', value: 'azure' }
+                            ]
+                        },
+                        {
+                            title: '¿Cuál es tu volumen de <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-400">datos</span>?',
+                            subtitle: 'Estima el volumen de datos que procesas mensualmente.',
+                            options: [
+                                { icon: 'database', label: 'Menos de 1TB', value: 'small' },
+                                { icon: 'storage', label: '1TB - 50TB', value: 'medium' },
+                                { icon: 'dns', label: 'Más de 50TB', value: 'large' }
+                            ]
+                        },
+                        {
+                            title: 'Definamos tu <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-400">meta</span>.',
+                            subtitle: '¿Cuál es el principal desafío que buscas resolver?',
+                            options: [
+                                { icon: 'trending_down', label: 'Reducción de Costos', value: 'cost' },
+                                { icon: 'speed', label: 'Velocidad de Procesamiento', value: 'speed' },
+                                { icon: 'scale', label: 'Escalabilidad', value: 'scale' }
+                            ]
+                        },
+                        {
+                            title: 'Recibe tu <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-400">plan</span>.',
+                            subtitle: 'Déjanos tu email profesional y te enviaremos una hoja de ruta preliminar.',
+                            inputType: 'email',
+                            placeholder: 'tu@empresa.com'
+                        }
+                    ]
                 },
                 footer: {
-                    copyright: '© 2024 Codeflow Systems. Powered by Excellence.'
+                    copyright: '© 2026 Codeflow Systems. Powered by Excellence.'
                 }
             },
             en: {
@@ -792,24 +826,164 @@
                 },
                 audit: {
                     progress: 'Audit Progress',
-                    step: 'Step 1 of 4: Tech Stack',
-                    title: 'Let\'s start with your foundation',
-                    subtitle: 'Select the primary environment where your core FinTech applications are hosted.',
-                    button: 'Continue to Step 2'
+                    step: 'Step {current} of 4: {name}',
+                    stepsNames: ['Tech Stack', 'Data Volume', 'Main Goal', 'Contact'],
+                    button: 'Continue to Step {next}',
+                    finishButton: 'Request Audit',
+                    stepsData: [
+                        {
+                            title: 'Let\'s start with your <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-400">foundation</span>.',
+                            subtitle: 'Select the primary environment where your core FinTech applications are hosted.',
+                            options: [
+                                { icon: 'cloud', label: 'Amazon Web Services', value: 'aws' },
+                                { icon: 'grid_view', label: 'Microsoft Azure', value: 'azure' }
+                            ]
+                        },
+                        {
+                            title: 'What is your <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-400">data volume</span>?',
+                            subtitle: 'Estimate the volume of data you process monthly.',
+                            options: [
+                                { icon: 'database', label: 'Less than 1TB', value: 'small' },
+                                { icon: 'storage', label: '1TB - 50TB', value: 'medium' },
+                                { icon: 'dns', label: 'More than 50TB', value: 'large' }
+                            ]
+                        },
+                        {
+                            title: 'Define your <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-400">goal</span>.',
+                            subtitle: 'What is the main challenge you are looking to solve?',
+                            options: [
+                                { icon: 'trending_down', label: 'Cost Reduction', value: 'cost' },
+                                { icon: 'speed', label: 'Processing Speed', value: 'speed' },
+                                { icon: 'scale', label: 'Scalability', value: 'scale' }
+                            ]
+                        },
+                        {
+                            title: 'Get your <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-400">roadmap</span>.',
+                            subtitle: 'Leave your professional email and we will send you a preliminary roadmap.',
+                            inputType: 'email',
+                            placeholder: 'you@company.com'
+                        }
+                    ]
                 },
                 footer: {
-                    copyright: '© 2024 Codeflow Systems. Powered by Excellence.'
+                    copyright: '© 2026 Codeflow Systems. Powered by Excellence.'
                 }
             }
         };
 
         let currentLang = 'es';
+        let currentStep = 1;
+        const totalSteps = 4;
 
         document.getElementById('langToggle')?.addEventListener('click', function () {
             currentLang = currentLang === 'es' ? 'en' : 'es';
             document.getElementById('currentLang').textContent = currentLang.toUpperCase();
             updateContent(currentLang);
+            renderAuditStep(currentStep);
         });
+
+        // Initialize audit form functionality
+        document.getElementById('audit-next-btn')?.addEventListener('click', function () {
+            if (currentStep < totalSteps) {
+                currentStep++;
+                renderAuditStep(currentStep);
+            } else {
+                // Submit action (simulated)
+                const btn = this;
+                const originalText = btn.textContent;
+                btn.textContent = currentLang === 'es' ? 'Enviando...' : 'Sending...';
+                btn.disabled = true;
+                setTimeout(() => {
+                    alert(currentLang === 'es' ? '¡Gracias! Te contactaremos pronto.' : 'Thank you! We will contact you soon.');
+                    btn.textContent = originalText;
+                    btn.disabled = false;
+                    currentStep = 1;
+                    renderAuditStep(currentStep);
+                }, 1500);
+            }
+        });
+
+        function renderAuditStep(step) {
+            const t = translations[currentLang].audit;
+            const percentage = (step / totalSteps) * 100;
+            const stepData = t.stepsData[step - 1];
+
+            // Update Progress UI
+            document.getElementById('audit-progress-text').textContent = t.progress;
+            document.getElementById('audit-step-text').textContent = t.step.replace('{current}', step).replace('{name}', t.stepsNames[step - 1]);
+            document.getElementById('audit-percentage').textContent = percentage + '%';
+            document.getElementById('audit-progress-bar').style.width = percentage + '%';
+
+            // Update Content
+            document.getElementById('audit-title').innerHTML = stepData.title;
+            document.getElementById('audit-subtitle').textContent = stepData.subtitle;
+
+            // Update Options / Input
+            const optionsContainer = document.getElementById('audit-options');
+            optionsContainer.innerHTML = ''; // Clear previous content
+
+            if (stepData.inputType === 'email') {
+                // Render Email Input
+                optionsContainer.className = 'w-full'; // Remove grid for single input
+                optionsContainer.innerHTML = `
+                    <div class="w-full">
+                        <input type="email" placeholder="${stepData.placeholder}" 
+                            class="w-full h-14 px-5 rounded-xl bg-surface-dark border border-white/10 text-white placeholder:text-slate-500 focus:border-primary focus:ring-1 focus:ring-primary transition-all outline-none"
+                        />
+                    </div>
+                `;
+            } else {
+                // Render Radio Options
+                optionsContainer.className = 'grid grid-cols-1 sm:grid-cols-2 gap-4'; // Restore grid
+                stepData.options.forEach((opt, index) => {
+                    const isChecked = index === 0 ? 'checked' : '';
+                    const html = `
+                        <label class="group relative flex flex-col items-start gap-4 rounded-xl border ${isChecked ? 'border-primary bg-primary/10' : 'border-white/10 bg-white/5'} p-6 cursor-pointer hover:border-primary/50 hover:bg-white/10 transition-all duration-300" onclick="selectAuditOption(this)">
+                            <input ${isChecked} class="peer sr-only" name="audit_step_${step}" type="radio" value="${opt.value}" />
+                            <div class="size-12 rounded-lg ${isChecked ? 'bg-primary' : 'bg-surface-dark border border-white/5'} flex items-center justify-center ${isChecked ? 'text-white' : 'text-slate-400'} group-hover:text-white transition-all">
+                                <span class="material-symbols-outlined text-3xl">${opt.icon}</span>
+                            </div>
+                            <p class="text-white text-lg font-bold">${opt.label}</p>
+                            <div class="absolute inset-0 rounded-xl border-2 ${isChecked ? 'border-primary' : 'border-transparent'} pointer-events-none transition-all"></div>
+                        </label>
+                    `;
+                    optionsContainer.insertAdjacentHTML('beforeend', html);
+                });
+            }
+
+            // Update Button
+            const nextBtn = document.getElementById('audit-next-btn');
+            if (step < totalSteps) {
+                nextBtn.textContent = t.button.replace('{next}', step + 1);
+            } else {
+                nextBtn.textContent = t.finishButton;
+            }
+        }
+
+        // Helper for radio selection styling
+        window.selectAuditOption = function (label) {
+            // Reset all siblings
+            const parent = label.parentElement;
+            const siblings = parent.querySelectorAll('label');
+            siblings.forEach(sib => {
+                sib.className = 'group relative flex flex-col items-start gap-4 rounded-xl border border-white/10 bg-white/5 p-6 cursor-pointer hover:border-primary/50 hover:bg-white/10 transition-all duration-300';
+                const iconContainer = sib.querySelector('div');
+                iconContainer.className = 'size-12 rounded-lg bg-surface-dark border border-white/5 flex items-center justify-center text-slate-400 group-hover:text-white transition-all';
+                const borderDiv = sib.querySelector('div:last-child');
+                borderDiv.className = 'absolute inset-0 rounded-xl border-2 border-transparent pointer-events-none transition-all';
+            });
+
+            // Set active style
+            label.className = 'group relative flex flex-col items-start gap-4 rounded-xl border border-primary bg-primary/10 p-6 cursor-pointer transition-all';
+            const activeIcon = label.querySelector('div');
+            activeIcon.className = 'size-12 rounded-lg bg-primary flex items-center justify-center text-white shadow-[0_0_15px_rgba(139,92,246,0.5)]';
+            const activeBorder = label.querySelector('div:last-child');
+            activeBorder.className = 'absolute inset-0 rounded-xl border-2 border-primary pointer-events-none';
+
+            // Set radio checked
+            const input = label.querySelector('input');
+            input.checked = true;
+        }
 
         function updateContent(lang) {
             const t = translations[lang];
@@ -889,29 +1063,10 @@
             if (francoBio) francoBio.textContent = t.founders.franco.bio;
 
             // Update Audit Form
-            const auditProgress = document.querySelector('#audit p.text-primary');
-            if (auditProgress) auditProgress.textContent = t.audit.progress;
-
-            const auditStep = document.querySelector('#audit p.text-white.text-base');
-            if (auditStep) auditStep.textContent = t.audit.step;
-
-            const auditTitle = document.querySelector('#audit h1');
-            if (auditTitle) {
-                const spanMatch = auditTitle.querySelector('span');
-                const spanClass = spanMatch ? spanMatch.className : 'text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-400';
-
-                if (lang === 'es') {
-                    auditTitle.innerHTML = 'Comencemos con tu <span class="' + spanClass + '">base</span>.';
-                } else {
-                    auditTitle.innerHTML = 'Let\'s start with your <span class="' + spanClass + '">foundation</span>.';
-                }
-            }
-
-            const auditSubtitle = document.querySelector('#audit .text-center > p.text-slate-400');
-            if (auditSubtitle) auditSubtitle.textContent = t.audit.subtitle;
-
-            const auditBtn = document.querySelector('#audit button');
-            if (auditBtn) auditBtn.textContent = t.audit.button;
+            // This is now handled by renderAuditStep(currentStep) in the lang toggle event
+            // But we keep the footer update here
+            const footerCopy = document.querySelector('footer span.text-slate-500');
+            if (footerCopy) footerCopy.textContent = t.footer.copyright;
         }
     </script>
 </body>
