@@ -214,8 +214,9 @@
                                     </a>
                                 </div>
                                 <div class="pt-6 flex flex-col gap-4">
-                                    <p class="text-xs font-semibold uppercase tracking-wider text-slate-500">Con la
-                                        confianza de innovadores FinTech</p>
+                                    <p id="hero-trust-text"
+                                        class="text-xs font-semibold uppercase tracking-wider text-slate-500">Nuestras
+                                        Herramientas</p>
                                     <div
                                         class="flex flex-wrap justify-center lg:justify-start gap-6 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
                                         <div class="flex items-center gap-2 text-slate-400 font-bold text-sm group">
@@ -720,7 +721,7 @@
                 founders: {
                     badge: 'Los Expertos',
                     title: 'Conoce a los Fundadores',
-                    subtitle: 'Generando confianza a través de la transparencia. Nuestro liderazgo combina décadas de experiencia en infraestructura de alta escala y arquitectura de datos.',
+                    subtitle: 'Generando confianza a través de la transparencia. Nuestro liderazgo combina experiencia técnica en infraestructura de alta escala y arquitectura de datos.',
                     rodrigo: {
                         role: 'Cloud & Ops Lead',
                         bio: 'Experto en infraestructura Cloud especializado en optimizar sistemas para máxima escalabilidad y seguridad.'
@@ -805,7 +806,7 @@
                     subtitle: 'We empower modern companies by reducing operating costs and optimizing workflows through data architecture and intelligent automation.',
                     cta1: 'Schedule Free Audit',
                     cta2: 'View Solutions',
-                    trust: 'Trusted by innovative companies'
+                    trust: 'Our Tech Stack'
                 },
                 features: {
                     azure: 'Cloud Architecture',
@@ -828,7 +829,7 @@
                 founders: {
                     badge: 'The Experts',
                     title: 'Meet the Founders',
-                    subtitle: 'Engineering trust through transparency. Our leadership combines decades of experience in high-scale cloud infrastructure and data architecture.',
+                    subtitle: 'Engineering trust through transparency. Our leadership combines technical expertise in high-scale cloud infrastructure and data architecture.',
                     rodrigo: {
                         role: 'Cloud & Ops Lead',
                         bio: 'Cloud Infrastructure expert specialized in optimizing systems for maximum scalability and security.'
@@ -1016,14 +1017,18 @@ ${currentLang === 'es' ? 'Espero su respuesta.' : 'Awaiting your response.'}
             // Update Button
             const nextBtn = document.getElementById('audit-next-btn');
             nextBtn.textContent = t.button;
-            nextBtn.onclick = function () {
-                // Reset form
+
+            // Handle reset
+            const handleReset = () => {
                 currentStep = 1;
                 auditAnswers = {};
                 renderAuditStep(currentStep);
-                // Important: remove this onclick to restore original listener flow
-                nextBtn.onclick = null;
+                nextBtn.removeEventListener('click', handleReset);
             };
+
+            // Important: we need to replace the listener for the close button
+            // To be safe, we'll use onclick here as it overrides the "Continue" listener logic in the specific state
+            nextBtn.onclick = handleReset;
         }
     }
 });
