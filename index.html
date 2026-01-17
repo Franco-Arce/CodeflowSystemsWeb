@@ -619,10 +619,13 @@
                             <h1 id="audit-title"
                                 class="text-white tracking-tight text-3xl md:text-4xl font-bold leading-tight mb-3">
                                 Describe tu <span
-                                    class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-400">problema</span>.
+                                    class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-400">desafío
+                                    actual</span>.
                             </h1>
                             <p id="audit-subtitle" class="text-slate-400 text-lg font-normal leading-relaxed max-w-2xl">
-                                Cuéntanos brevemente qué obstáculo enfrenta tu empresa actualmente.
+                                Cuéntanos sobre tus cuellos de botella: horas excesivas en tareas manuales, datos
+                                dispersos o falta de visibilidad. Sea cual sea el estado de su información, creamos una
+                                solución a medida.
                             </p>
                         </div>
                         <div id="audit-options" class="w-full">
@@ -721,10 +724,10 @@
                     finishButton: 'Solicitar Auditoría',
                     stepsData: [
                         {
-                            title: 'Describe tu <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-400">problema</span>.',
-                            subtitle: 'Cuéntanos brevemente qué obstáculo enfrenta tu empresa actualmente.',
+                            title: 'Describe tu <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-400">desafío actual</span>.',
+                            subtitle: 'Cuéntanos sobre tus cuellos de botella: horas excesivas en tareas manuales, datos dispersos o falta de visibilidad. Sea cual sea el estado de su información, creamos una solución a medida.',
                             inputType: 'textarea',
-                            placeholder: 'Ej: Perdemos mucho tiempo en reportes manuales...'
+                            placeholder: 'Ej: Pasamos 10 horas semanales en Excel, no confiamos en nuestros datos de ventas...'
                         },
                         {
                             title: 'Stack <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-400">Tecnológico</span>.',
@@ -824,10 +827,10 @@
                     finishButton: 'Request Audit',
                     stepsData: [
                         {
-                            title: 'Describe your <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-400">problem</span>.',
-                            subtitle: 'Briefly tell us what obstacle your company is currently facing.',
+                            title: 'Describe your <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-400">current challenge</span>.',
+                            subtitle: 'Tell us about your bottlenecks: excessive hours on manual tasks, scattered data, or lack of visibility. Whatever the state of your information, we build a tailored solution.',
                             inputType: 'textarea',
-                            placeholder: 'Ex: We waste a lot of time on manual reporting...'
+                            placeholder: 'Ex: We spend 10 hours a week on Excel, we don\'t trust our sales data...'
                         },
                         {
                             title: 'Tech <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-400">Stack</span>.',
@@ -928,8 +931,7 @@
                 // Submit action via Mailto
                 const btn = this;
                 const originalText = btn.textContent;
-                btn.textContent = currentLang === 'es' ? 'Generando...' : 'Generating...';
-                btn.disabled = true;
+                btn.textContent = currentLang === 'es' ? 'Abriendo correo...' : 'Opening email...';
 
                 // Construct Email Body
                 const subject = currentLang === 'es' ? 'Nueva Solicitud de Auditoría - Codeflow Systems' : 'New Audit Request - Codeflow Systems';
@@ -958,17 +960,13 @@ ${currentLang === 'es' ? 'Espero su respuesta.' : 'Awaiting your response.'}
 
                 const mailtoLink = `mailto:Francogonzaloarce@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
+                // Trigger immediately
+                window.location.href = mailtoLink;
+
+                // Reset button after short delay
                 setTimeout(() => {
-                    window.location.href = mailtoLink;
-                    setTimeout(() => {
-                        btn.textContent = originalText;
-                        btn.disabled = false;
-                        // Optional: Reset form
-                        // currentStep = 1;
-                        // auditAnswers = {};
-                        // renderAuditStep(currentStep);
-                    }, 1000);
-                }, 1000);
+                    btn.textContent = originalText;
+                }, 3000);
             }
         });
 
