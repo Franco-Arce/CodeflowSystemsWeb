@@ -598,8 +598,9 @@
                             <div>
                                 <p
                                     class="text-primary font-bold text-xs uppercase tracking-widest mb-1 drop-shadow-[0_0_8px_rgba(139,92,246,0.6)]">
-                                    Audit Progress</p>
-                                <p class="text-white text-base font-medium leading-normal">Step 1 of 4: Tech Stack</p>
+                                    Progreso de Auditoría</p>
+                                <p class="text-white text-base font-medium leading-normal">Paso 1 de 4: Stack
+                                    Tecnológico</p>
                             </div>
                             <p
                                 class="text-white text-sm font-bold leading-normal bg-clip-text text-transparent bg-violet-cyan">
@@ -613,11 +614,11 @@
                     <div class="flex flex-col gap-6">
                         <div class="text-center md:text-left mb-4">
                             <h1 class="text-white tracking-tight text-3xl md:text-4xl font-bold leading-tight mb-3">
-                                Let's start with your <span
-                                    class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-400">foundation</span>.
+                                Comencemos con tu <span
+                                    class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-400">base</span>.
                             </h1>
                             <p class="text-slate-400 text-lg font-normal leading-relaxed max-w-2xl">
-                                Select the primary environment where your core FinTech applications are hosted.
+                                Selecciona el entorno principal donde se alojan tus aplicaciones FinTech.
                             </p>
                         </div>
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -647,7 +648,7 @@
                         </div>
                         <button
                             class="flex w-full items-center justify-center rounded-lg h-12 bg-primary text-white font-bold hover:bg-primary-hover shadow-neon mt-8 transition-all">
-                            Continue to Step 2
+                            Continuar al Paso 2
                         </button>
                     </div>
                 </div>
@@ -724,6 +725,13 @@
                         bio: 'Especializado en construir pipelines DataOps de alto rendimiento y modelos predictivos para líderes FinTech y Ed-Tech.'
                     }
                 },
+                audit: {
+                    progress: 'Progreso de Auditoría',
+                    step: 'Paso 1 de 4: Stack Tecnológico',
+                    title: 'Comencemos con tu base',
+                    subtitle: 'Selecciona el entorno principal donde se alojan tus aplicaciones FinTech.',
+                    button: 'Continuar al Paso 2'
+                },
                 footer: {
                     copyright: '© 2024 Codeflow Systems. Powered by Excellence.'
                 }
@@ -774,6 +782,13 @@
                         role: 'Data & Architecture Lead',
                         bio: 'Specialized in building high-throughput DataOps pipelines and predictive models for FinTech and Ed-Tech leaders.'
                     }
+                },
+                audit: {
+                    progress: 'Audit Progress',
+                    step: 'Step 1 of 4: Tech Stack',
+                    title: 'Let\'s start with your foundation',
+                    subtitle: 'Select the primary environment where your core FinTech applications are hosted.',
+                    button: 'Continue to Step 2'
                 },
                 footer: {
                     copyright: '© 2024 Codeflow Systems. Powered by Excellence.'
@@ -865,6 +880,31 @@
 
             const francoBio = document.querySelectorAll('#nosotros .text-slate-400')[1];
             if (francoBio) francoBio.textContent = t.founders.franco.bio;
+
+            // Update Audit Form
+            const auditProgress = document.querySelector('#audit p.text-primary');
+            if (auditProgress) auditProgress.textContent = t.audit.progress;
+
+            const auditStep = document.querySelector('#audit p.text-white.text-base');
+            if (auditStep) auditStep.textContent = t.audit.step;
+
+            const auditTitle = document.querySelector('#audit h1');
+            if (auditTitle) {
+                const spanMatch = auditTitle.querySelector('span');
+                const spanClass = spanMatch ? spanMatch.className : 'text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-400';
+
+                if (lang === 'es') {
+                    auditTitle.innerHTML = 'Comencemos con tu <span class="' + spanClass + '">base</span>.';
+                } else {
+                    auditTitle.innerHTML = 'Let\'s start with your <span class="' + spanClass + '">foundation</span>.';
+                }
+            }
+
+            const auditSubtitle = document.querySelector('#audit .text-center > p.text-slate-400');
+            if (auditSubtitle) auditSubtitle.textContent = t.audit.subtitle;
+
+            const auditBtn = document.querySelector('#audit button');
+            if (auditBtn) auditBtn.textContent = t.audit.button;
         }
     </script>
 </body>
