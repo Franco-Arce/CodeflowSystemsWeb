@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://raw.githubusercontent.com/Franco-Arce/CodeflowSystemsWeb/main/header.svg" width="800" alt="Codeflow Systems Header" />
+  <img src="header.svg" width="800" alt="Codeflow Systems Header" />
 
   <p>
     <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
@@ -15,11 +15,11 @@
 
 ### 🚀 Inteligencia Operativa & DataOps para FinTech
 
-Transformamos datos crudos en activos financieros de alto rendimiento. Nuestra sinergia combina una **infraestructura robusta** con **inteligencia de datos estratégica** para escalar operaciones sin fricción.
+Transformamos datos crudos en activos financieros de alto rendimiento. Nuestra sinergia combina una **infraestructura robusta** (Cloud & Ops) con **inteligencia de datos estratégica** (Data & AI) para escalar operaciones sin fricción.
 
 - ⚡ **Aceleración de Eficiencia**: Reducción del **75%** en tiempos de procesamiento mediante pipelines inteligentes.
 - 🛡️ **Confiabilidad**: Garantizamos un **99.9% de disponibilidad** en infraestructura bancaria crítica.
-- 📉 **Escalabilidad**: Automatización del 100% de tareas de soporte técnico recurrente usando Python.
+- 📉 **Escalabilidad**: Automatización del 100% de tareas de soporte técnico recurrente.
 
 ---
 
@@ -60,11 +60,13 @@ Transformamos datos crudos en activos financieros de alto rendimiento. Nuestra s
 
 ---
 
-### 📊 Estadísticas Globales
+### 📊 Estadísticas (⚠️ Servicio Temporalmente Fuera de Línea)
+
+> [!NOTE]
+> Las tarjetas de estadísticas a continuación dependen de un servicio externo (`github-readme-stats`) que actualmente se encuentra pausado por su desarrollador. Volverán a ser visibles automáticamente una vez el servicio sea reactivado.
 
 <div align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=Franco-Arce&show_icons=true&theme=tokyonight&count_private=true" alt="GitHub Stats" />
-  <br/>
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Franco-Arce&layout=compact&theme=tokyonight" alt="Top Languages" />
 </div>
 
