@@ -794,60 +794,50 @@
                     }
                 },
                 audit: {
-                    progress: 'Progreso de Auditoría',
-                    step: 'Paso {current} de 5: {name}',
-                    stepsNames: ['Tu Problema', 'Stack Tecnológico', 'Volumen de Datos', 'Objetivo Principal', 'Contacto'],
+                    progress: 'Progreso de Consulta',
+                    step: 'Paso {current} de 4: {name}',
+                    stepsNames: ['Tu Situación', 'Qué Necesitás', 'Tu Negocio', 'Contacto'],
                     button: 'Continuar al Paso {next}',
-                    finishButton: 'Solicitar Auditoría',
+                    finishButton: 'Enviar por WhatsApp',
                     stepsData: [
                         {
-                            title: 'Describe tu <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-400">desafío actual</span>.',
-                            subtitle: 'Cuéntanos sobre tus cuellos de botella: horas excesivas en tareas manuales, datos dispersos o falta de visibilidad. Sea cual sea el estado de su información, creamos una solución a medida.',
+                            title: 'Contanos sobre tu <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-400">situación actual</span>.',
+                            subtitle: '¿Qué desafíos enfrentás en tu negocio? Podemos ayudarte con datos, software a medida o soporte técnico.',
                             inputType: 'textarea',
-                            placeholder: 'Ej: Pasamos 10 horas semanales en Excel, no confiamos en nuestros datos de ventas...'
+                            placeholder: 'Ej: Tengo toda la info en Excel y me cuesta tomar decisiones, necesito un sistema para gestionar clientes...'
                         },
                         {
-                            title: 'Stack <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-400">Tecnológico</span>.',
-                            subtitle: 'Selecciona las herramientas que utilizas actualemente (puedes marcar varias).',
+                            title: '¿Qué tipo de <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-400">solución</span> buscás?',
+                            subtitle: 'Seleccioná las áreas en las que te podemos ayudar (podés marcar varias).',
                             inputType: 'checkbox',
                             options: [
-                                { icon: 'cloud', label: 'Amazon Web Services', value: 'aws' },
-                                { icon: 'grid_view', label: 'Microsoft Azure', value: 'azure' },
-                                { icon: 'table_view', label: 'Hojas de Cálculo', value: 'spreadsheets' },
-                                { icon: 'dns', label: 'On-Premise / Otro', value: 'other' }
+                                { icon: 'monitoring', label: 'Análisis de Datos / Reportes', value: 'data' },
+                                { icon: 'code', label: 'Sistema o App a Medida', value: 'software' },
+                                { icon: 'support_agent', label: 'Soporte Técnico / Hardware', value: 'support' },
+                                { icon: 'help', label: 'No estoy seguro, quiero asesoramiento', value: 'consulting' }
                             ]
                         },
                         {
-                            title: '¿Cuál es tu volumen de <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-400">datos</span>?',
-                            subtitle: 'Estima el volumen de datos que procesas mensualmente.',
+                            title: '¿Qué tamaño tiene tu <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-400">negocio</span>?',
+                            subtitle: 'Esto nos ayuda a dimensionar la solución ideal para vos.',
                             inputType: 'radio',
                             options: [
-                                { icon: 'database', label: 'Menos de 1TB', value: 'small' },
-                                { icon: 'storage', label: '1TB - 50TB', value: 'medium' },
-                                { icon: 'dns', label: 'Más de 50TB', value: 'large' }
+                                { icon: 'person', label: 'Emprendedor / Freelancer', value: 'freelancer' },
+                                { icon: 'group', label: 'Pequeña empresa (1-10 empleados)', value: 'small' },
+                                { icon: 'groups', label: 'Empresa mediana (11-50 empleados)', value: 'medium' }
                             ]
                         },
                         {
-                            title: 'Definamos tu <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-400">meta</span>.',
-                            subtitle: '¿Cuál es el principal desafío que buscas resolver?',
-                            inputType: 'radio',
-                            options: [
-                                { icon: 'trending_down', label: 'Reducción de Costos', value: 'cost' },
-                                { icon: 'speed', label: 'Velocidad de Procesamiento', value: 'speed' },
-                                { icon: 'scale', label: 'Escalabilidad', value: 'scale' }
-                            ]
-                        },
-                        {
-                            title: 'Recibe tu <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-400">plan</span>.',
-                            subtitle: 'Déjanos tu email profesional y te enviaremos una hoja de ruta preliminar.',
-                            inputType: 'email',
-                            placeholder: 'tu@empresa.com'
+                            title: '¿Cómo te <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-400">contactamos</span>?',
+                            subtitle: 'Dejanos tu nombre y te contactamos por WhatsApp para charlar sobre tu proyecto.',
+                            inputType: 'text',
+                            placeholder: 'Tu nombre'
                         }
                     ],
                     confirmation: {
-                        title: '¡Solicitud <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-400">Enviada</span>!',
-                        subtitle: 'Hemos generado tu borrador de auditoría. Revisa tu cliente de correo (Outlook, Gmail, etc.) para enviar el mensaje y comenzar el proceso.',
-                        button: 'Cerrar'
+                        title: '¡Redirigiendo a <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-400">WhatsApp</span>!',
+                        subtitle: 'Se abrirá WhatsApp con tu consulta. Si no se abre automáticamente, hacé click en el botón.',
+                        button: 'Abrir WhatsApp'
                     }
                 },
                 footer: {
@@ -906,60 +896,50 @@
                     }
                 },
                 audit: {
-                    progress: 'Audit Progress',
-                    step: 'Step {current} of 5: {name}',
-                    stepsNames: ['Your Problem', 'Tech Stack', 'Data Volume', 'Main Goal', 'Contact'],
+                    progress: 'Consultation Progress',
+                    step: 'Step {current} of 4: {name}',
+                    stepsNames: ['Your Situation', 'What You Need', 'Your Business', 'Contact'],
                     button: 'Continue to Step {next}',
-                    finishButton: 'Request Audit',
+                    finishButton: 'Send via WhatsApp',
                     stepsData: [
                         {
-                            title: 'Describe your <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-400">current challenge</span>.',
-                            subtitle: 'Tell us about your bottlenecks: excessive hours on manual tasks, scattered data, or lack of visibility. Whatever the state of your information, we build a tailored solution.',
+                            title: 'Tell us about your <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-400">current situation</span>.',
+                            subtitle: 'What challenges are you facing in your business? We can help with data, custom software or technical support.',
                             inputType: 'textarea',
-                            placeholder: 'Ex: We spend 10 hours a week on Excel, we don\'t trust our sales data...'
+                            placeholder: 'Ex: I have all my info in Excel and struggle to make decisions, I need a system to manage clients...'
                         },
                         {
-                            title: 'Tech <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-400">Stack</span>.',
-                            subtitle: 'Select the tools you currently use (you can select multiple).',
+                            title: 'What type of <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-400">solution</span> are you looking for?',
+                            subtitle: 'Select the areas where we can help you (you can select multiple).',
                             inputType: 'checkbox',
                             options: [
-                                { icon: 'cloud', label: 'Amazon Web Services', value: 'aws' },
-                                { icon: 'grid_view', label: 'Microsoft Azure', value: 'azure' },
-                                { icon: 'table_view', label: 'Spreadsheets', value: 'spreadsheets' },
-                                { icon: 'dns', label: 'On-Premise / Other', value: 'other' }
+                                { icon: 'monitoring', label: 'Data Analytics / Reports', value: 'data' },
+                                { icon: 'code', label: 'Custom System or App', value: 'software' },
+                                { icon: 'support_agent', label: 'Technical Support / Hardware', value: 'support' },
+                                { icon: 'help', label: 'Not sure, I want consulting', value: 'consulting' }
                             ]
                         },
                         {
-                            title: 'What is your <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-400">data volume</span>?',
-                            subtitle: 'Estimate the volume of data you process monthly.',
+                            title: 'What is your <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-400">business</span> size?',
+                            subtitle: 'This helps us dimension the ideal solution for you.',
                             inputType: 'radio',
                             options: [
-                                { icon: 'database', label: 'Less than 1TB', value: 'small' },
-                                { icon: 'storage', label: '1TB - 50TB', value: 'medium' },
-                                { icon: 'dns', label: 'More than 50TB', value: 'large' }
+                                { icon: 'person', label: 'Freelancer / Entrepreneur', value: 'freelancer' },
+                                { icon: 'group', label: 'Small business (1-10 employees)', value: 'small' },
+                                { icon: 'groups', label: 'Medium business (11-50 employees)', value: 'medium' }
                             ]
                         },
                         {
-                            title: 'Define your <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-400">goal</span>.',
-                            subtitle: 'What is the main challenge you are looking to solve?',
-                            inputType: 'radio',
-                            options: [
-                                { icon: 'trending_down', label: 'Cost Reduction', value: 'cost' },
-                                { icon: 'speed', label: 'Processing Speed', value: 'speed' },
-                                { icon: 'scale', label: 'Scalability', value: 'scale' }
-                            ]
-                        },
-                        {
-                            title: 'Get your <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-400">roadmap</span>.',
-                            subtitle: 'Leave your professional email and we will send you a preliminary roadmap.',
-                            inputType: 'email',
-                            placeholder: 'you@company.com'
+                            title: 'How can we <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-400">contact you</span>?',
+                            subtitle: 'Leave your name and we will contact you via WhatsApp to discuss your project.',
+                            inputType: 'text',
+                            placeholder: 'Your name'
                         }
                     ],
                     confirmation: {
-                        title: 'Request <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-400">Sent</span>!',
-                        subtitle: 'We have generated your audit draft. Please check your email client (Outlook, Gmail, etc.) to send the message and start the process.',
-                        button: 'Close'
+                        title: 'Redirecting to <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-400">WhatsApp</span>!',
+                        subtitle: 'WhatsApp will open with your inquiry. If it doesn\'t open automatically, click the button.',
+                        button: 'Open WhatsApp'
                     }
                 },
                 footer: {
@@ -970,7 +950,7 @@
 
         let currentLang = 'es';
         let currentStep = 1;
-        const totalSteps = 5;
+        const totalSteps = 4;
         let auditAnswers = {};
 
         document.getElementById('langToggle')?.addEventListener('click', function () {
@@ -992,10 +972,10 @@
                     return;
                 }
                 auditAnswers[`step${currentStep}`] = textarea.value.trim();
-            } else if (currentStepData.inputType === 'email') {
-                const input = document.querySelector('input[type="email"]');
-                if (!input || !input.value.trim() || !input.value.includes('@')) {
-                    alert(currentLang === 'es' ? 'Por favor ingresa un email válido.' : 'Please enter a valid email.');
+            } else if (currentStepData.inputType === 'text') {
+                const input = document.querySelector('input[type="text"]');
+                if (!input || !input.value.trim()) {
+                    alert(currentLang === 'es' ? 'Por favor ingresa tu nombre.' : 'Please enter your name.');
                     return;
                 }
                 auditAnswers[`step${currentStep}`] = input.value.trim();
@@ -1019,49 +999,60 @@
                 currentStep++;
                 renderAuditStep(currentStep);
             } else {
-                // Submit action via Mailto
+                // Submit action via WhatsApp
                 const btn = this;
-                const originalText = btn.textContent;
-                btn.textContent = currentLang === 'es' ? 'Abriendo correo...' : 'Opening email...';
+                btn.textContent = currentLang === 'es' ? 'Abriendo WhatsApp...' : 'Opening WhatsApp...';
 
-                // Construct Email Body
-                const subject = currentLang === 'es' ? 'Nueva Solicitud de Auditoría - Codeflow Systems' : 'New Audit Request - Codeflow Systems';
-                const body = `
-${currentLang === 'es' ? 'Hola Codeflow Systems,' : 'Hello Codeflow Systems,'}
+                // Construct WhatsApp message
+                const message = currentLang === 'es'
+                    ? `Hola Codeflow Systems! 👋
 
-${currentLang === 'es' ? 'Me gustaría solicitar una auditoría técnica. Aquí están mis detalles:' : 'I would like to request a technical audit. Here are my details:'}
+Me interesa una consulta. Acá van mis datos:
 
-1. ${translations[currentLang].audit.stepsNames[0]} (Problem):
+📝 *Situación:*
 ${auditAnswers.step1}
 
-2. ${translations[currentLang].audit.stepsNames[1]} (Stack):
+🔧 *Solución que busco:*
 ${auditAnswers.step2}
 
-3. ${translations[currentLang].audit.stepsNames[2]} (Volume):
+🏢 *Tamaño de mi negocio:*
 ${auditAnswers.step3}
 
-4. ${translations[currentLang].audit.stepsNames[3]} (Goal):
+👤 *Mi nombre:*
 ${auditAnswers.step4}
 
-5. ${translations[currentLang].audit.stepsNames[4]} (Email):
-${auditAnswers.step5}
+Espero su respuesta!`
+                    : `Hello Codeflow Systems! 👋
 
-${currentLang === 'es' ? 'Espero su respuesta.' : 'Awaiting your response.'}
-                `.trim();
+I'm interested in a consultation. Here are my details:
 
-                const mailtoLink = `mailto:Francogonzaloarce@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+📝 *Situation:*
+${auditAnswers.step1}
+
+🔧 *Solution I'm looking for:*
+${auditAnswers.step2}
+
+🏢 *Business size:*
+${auditAnswers.step3}
+
+👤 *My name:*
+${auditAnswers.step4}
+
+Awaiting your response!`;
+
+                const whatsappLink = `https://wa.me/5493516009843?text=${encodeURIComponent(message)}`;
 
                 // Trigger immediately
-                window.location.href = mailtoLink;
+                window.open(whatsappLink, '_blank');
 
                 // Show confirmation screen
                 setTimeout(() => {
-                    renderConfirmationScreen();
-                }, 1000);
+                    renderConfirmationScreen(whatsappLink);
+                }, 500);
             }
         });
 
-        function renderConfirmationScreen() {
+        function renderConfirmationScreen(whatsappLink) {
             const t = translations[currentLang].audit.confirmation;
 
             // Update Title/Subtitle
@@ -1072,29 +1063,23 @@ ${currentLang === 'es' ? 'Espero su respuesta.' : 'Awaiting your response.'}
             const optionsContainer = document.getElementById('audit-options');
             optionsContainer.className = 'w-full flex flex-col items-center py-8';
             optionsContainer.innerHTML = `
-                <div class="size-20 rounded-full bg-primary/20 flex items-center justify-center text-primary mb-6 shadow-[0_0_30px_rgba(139,92,246,0.3)] border border-primary/30 animate-pulse">
-                    <span class="material-symbols-outlined text-5xl">check_circle</span>
+                <div class="size-20 rounded-full bg-green-500/20 flex items-center justify-center text-green-400 mb-6 shadow-[0_0_30px_rgba(34,197,94,0.3)] border border-green-500/30 animate-pulse">
+                    <span class="material-symbols-outlined text-5xl">chat</span>
                 </div>
                 <p class="text-slate-400 text-center text-sm italic">
-                    ${currentLang === 'es' ? 'Si el correo no se abrió automáticamente, asegúrate de no tener bloqueadores activos.' : 'If the email didn\'t open automatically, make sure you don\'t have active blockers.'}
+                    ${currentLang === 'es' ? 'Si WhatsApp no se abrió automáticamente, hacé click en el botón de abajo.' : 'If WhatsApp didn\'t open automatically, click the button below.'}
                 </p>
             `;
 
             // Update Button
             const nextBtn = document.getElementById('audit-next-btn');
             nextBtn.textContent = t.button;
+            nextBtn.className = 'flex w-full items-center justify-center rounded-lg h-12 bg-green-500 text-white font-bold hover:bg-green-600 shadow-[0_0_15px_rgba(34,197,94,0.4)] mt-8 transition-all';
 
-            // Handle reset
-            const handleReset = () => {
-                currentStep = 1;
-                auditAnswers = {};
-                renderAuditStep(currentStep);
-                nextBtn.removeEventListener('click', handleReset);
+            // Handle WhatsApp open
+            nextBtn.onclick = () => {
+                window.open(whatsappLink, '_blank');
             };
-
-            // Important: we need to replace the listener for the close button
-            // To be safe, we'll use onclick here as it overrides the "Continue" listener logic in the specific state
-            nextBtn.onclick = handleReset;
         }
 
         function renderAuditStep(step) {
@@ -1125,11 +1110,11 @@ ${currentLang === 'es' ? 'Espero su respuesta.' : 'Awaiting your response.'}
             optionsContainer.className = 'grid grid-cols-1 sm:grid-cols-2 gap-4'; // Default grid
             optionsContainer.innerHTML = ''; // Clear previous content
 
-            if (stepData.inputType === 'email') {
+            if (stepData.inputType === 'text') {
                 optionsContainer.className = 'w-full';
                 optionsContainer.innerHTML = `
                     <div class="w-full">
-                        <input type="email" placeholder="${stepData.placeholder}" 
+                        <input type="text" placeholder="${stepData.placeholder}" 
                             class="w-full h-14 px-5 rounded-xl bg-surface-dark border border-white/10 text-white placeholder:text-slate-500 focus:border-primary focus:ring-1 focus:ring-primary transition-all outline-none"
                         />
                     </div>
