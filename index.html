@@ -136,7 +136,7 @@
 
     <!-- Snippet 1: Header + Background Layers -->
     <div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
-        <div class="fixed inset-0 pointer-events-none z-0">
+        <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
             <div class="absolute top-0 left-1/4 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[120px] opacity-30">
             </div>
             <div
@@ -181,9 +181,51 @@
                             <span class="truncate">Agendar Consulta</span>
                         </a>
                     </nav>
-                    <div class="md:hidden flex items-center text-white">
-                        <span
-                            class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors">menu</span>
+                    <div class="md:hidden flex items-center gap-4">
+                        <!-- Language Toggle (Mobile) -->
+                        <button id="langToggleMobile"
+                            class="flex items-center gap-2 px-3 py-2 rounded-lg bg-white/5 border border-white/10 hover:border-primary/50 hover:bg-white/10 transition-all group">
+                            <span
+                                class="material-symbols-outlined text-sm text-slate-400 group-hover:text-primary transition-colors">language</span>
+                            <span id="currentLangMobile"
+                                class="text-xs font-bold text-slate-300 group-hover:text-white transition-colors">ES</span>
+                        </button>
+                        <button id="mobileMenuBtn" class="flex items-center text-white">
+                            <span
+                                class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors">menu</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Menu Overlay -->
+            <div id="mobileMenu"
+                class="fixed inset-0 z-[60] bg-black/95 backdrop-blur-xl translate-x-full transition-transform duration-300 md:hidden">
+                <div class="flex flex-col h-full p-8">
+                    <div class="flex items-center justify-between mb-12">
+                        <div class="flex items-center gap-3">
+                            <div class="flex size-8 items-center justify-center rounded-lg bg-primary text-white">
+                                <span class="material-symbols-outlined text-[20px]">terminal</span>
+                            </div>
+                            <span class="text-lg font-bold text-white">Codeflow</span>
+                        </div>
+                        <button id="closeMobileMenu" class="text-white">
+                            <span class="material-symbols-outlined">close</span>
+                        </button>
+                    </div>
+                    <nav class="flex flex-col gap-6">
+                        <a class="text-xl font-medium text-slate-300" href="#servicios"
+                            onclick="closeMenu()">Servicios</a>
+                        <a class="text-xl font-medium text-slate-300" href="#impacto" onclick="closeMenu()">Impacto</a>
+                        <a class="text-xl font-medium text-slate-300" href="#nosotros"
+                            onclick="closeMenu()">Fundadores</a>
+                        <a class="text-xl font-medium text-slate-300" href="#audit" onclick="closeMenu()">Auditoría</a>
+                    </nav>
+                    <div class="mt-auto pt-8 border-t border-white/10">
+                        <a href="#audit" onclick="closeMenu()"
+                            class="flex h-12 items-center justify-center rounded-lg bg-primary text-white font-bold shadow-neon">
+                            <span data-i18n="nav.schedule">Agendar Consulta</span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -201,17 +243,17 @@
                                     <div
                                         class="inline-flex items-center gap-2 self-center lg:self-start rounded-full bg-[#1e1b2e] border border-primary/30 px-3 py-1 text-xs font-semibold text-primary shadow-[0_0_15px_rgba(139,92,246,0.3)] backdrop-blur-sm">
                                         <span class="material-symbols-outlined text-[16px] text-accent">verified</span>
-                                        <span
+                                        <span data-i18n="hero.badge"
                                             class="bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">Soluciones
                                             Estratégicas</span>
                                     </div>
-                                    <h1
+                                    <h1 data-i18n="hero.title"
                                         class="text-4xl md:text-5xl lg:text-6xl font-black leading-[1.1] tracking-tight text-slate-900 dark:text-white">
                                         Transformamos tu Negocio con <span
                                             class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-purple-400 to-accent">Tecnología
                                             a tu Medida</span>
                                     </h1>
-                                    <p
+                                    <p data-i18n="hero.subtitle"
                                         class="text-lg text-slate-600 dark:text-slate-400 leading-relaxed max-w-2xl mx-auto lg:mx-0 font-medium">
                                         Ayudamos a pequeños negocios a digitalizarse, ordenar su información y tomar
                                         mejores decisiones con soluciones de datos, software personalizado y soporte
@@ -316,10 +358,10 @@
                                     <span class="material-symbols-outlined text-[28px]">monitoring</span>
                                 </div>
                                 <div class="flex flex-col gap-1">
-                                    <h3
-                                        class="text-base font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">
-                                        Análisis de Datos</h3>
-                                    <p class="text-sm text-slate-600 dark:text-slate-400">Dashboards, reportes y
+                                    <h3 class="text-base font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors"
+                                        data-i18n="features.data">Análisis de Datos</h3>
+                                    <p class="text-sm text-slate-600 dark:text-slate-400" data-i18n="features.dataDesc">
+                                        Dashboards, reportes y
                                         visualizaciones para tomar decisiones basadas en datos.</p>
                                 </div>
                             </div>
@@ -330,10 +372,10 @@
                                     <span class="material-symbols-outlined text-[28px]">code</span>
                                 </div>
                                 <div class="flex flex-col gap-1">
-                                    <h3
-                                        class="text-base font-bold text-slate-900 dark:text-white group-hover:text-accent transition-colors">
-                                        Desarrollo a Medida</h3>
-                                    <p class="text-sm text-slate-600 dark:text-slate-400">Sistemas web, aplicaciones
+                                    <h3 class="text-base font-bold text-slate-900 dark:text-white group-hover:text-accent transition-colors"
+                                        data-i18n="features.software">Desarrollo a Medida</h3>
+                                    <p class="text-sm text-slate-600 dark:text-slate-400"
+                                        data-i18n="features.softwareDesc">Sistemas web, aplicaciones
                                         empresariales y APIs personalizadas para tu negocio.</p>
                                 </div>
                             </div>
@@ -344,10 +386,10 @@
                                     <span class="material-symbols-outlined text-[28px]">support_agent</span>
                                 </div>
                                 <div class="flex flex-col gap-1">
-                                    <h3
-                                        class="text-base font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">
-                                        Soporte Operativo</h3>
-                                    <p class="text-sm text-slate-600 dark:text-slate-400">Mantenimiento de hardware,
+                                    <h3 class="text-base font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors"
+                                        data-i18n="features.support">Soporte Operativo</h3>
+                                    <p class="text-sm text-slate-600 dark:text-slate-400"
+                                        data-i18n="features.supportDesc">Mantenimiento de hardware,
                                         soporte técnico y gestión de datos en producción.</p>
                                 </div>
                             </div>
@@ -363,14 +405,15 @@
                     <div
                         class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/20 blur-[120px] rounded-full -z-10 pointer-events-none">
                     </div>
-                    <h2
-                        class="text-primary-glow text-xs md:text-sm font-bold tracking-[0.2em] uppercase mb-4 border border-primary/30 inline-block px-3 py-1 rounded-full bg-primary/10 backdrop-blur-sm">
+                    <h2 class="text-primary-glow text-xs md:text-sm font-bold tracking-[0.2em] uppercase mb-4 border border-primary/30 inline-block px-3 py-1 rounded-full bg-primary/10 backdrop-blur-sm"
+                        data-i18n="pillars.badge">
                         Nuestros Servicios</h2>
-                    <h1
-                        class="text-white text-4xl md:text-5xl lg:text-7xl font-black leading-tight tracking-[-0.02em] max-w-5xl mx-auto mb-6 drop-shadow-lg">
+                    <h1 class="text-white text-4xl md:text-5xl lg:text-7xl font-black leading-tight tracking-[-0.02em] max-w-5xl mx-auto mb-6 drop-shadow-lg"
+                        data-i18n="pillars.title">
                         Soluciones <span class="text-gradient">Integrales</span>
                     </h1>
-                    <p class="text-slate-300 text-lg md:text-xl font-medium leading-relaxed max-w-2xl mx-auto">
+                    <p class="text-slate-300 text-lg md:text-xl font-medium leading-relaxed max-w-2xl mx-auto"
+                        data-i18n="pillars.subtitle">
                         Tres áreas de especialización trabajando juntas para digitalizar tu negocio y ayudarte a tomar
                         mejores decisiones.
                     </p>
@@ -390,13 +433,15 @@
                                     <span class="material-symbols-outlined text-[36px] icon-gradient">monitoring</span>
                                 </div>
                                 <div>
-                                    <h3 class="text-white text-xl md:text-2xl font-bold leading-tight tracking-tight">
+                                    <h3 class="text-white text-xl md:text-2xl font-bold leading-tight tracking-tight"
+                                        data-i18n="pillars.data.title">
                                         Data & Analytics</h3>
                                     <p class="text-primary-glow/80 text-sm mt-1 font-medium tracking-wide">Franco Arce
                                     </p>
                                 </div>
                             </div>
-                            <p class="text-slate-300 mb-8 leading-relaxed text-base flex-grow">
+                            <p class="text-slate-300 mb-8 leading-relaxed text-base flex-grow"
+                                data-i18n="pillars.data.desc">
                                 Transformamos tus datos en información útil. Dashboards, reportes y análisis que te
                                 ayudan a entender tu negocio y tomar mejores decisiones.
                             </p>
@@ -405,13 +450,15 @@
                                     class="flex items-center gap-3 rounded-lg border border-white/10 bg-surface-dark p-4 hover:border-primary/60 transition-all duration-300">
                                     <span
                                         class="material-symbols-outlined text-primary-glow text-[24px]">bar_chart</span>
-                                    <span class="text-white text-sm font-medium">Dashboards & Reportes</span>
+                                    <span class="text-white text-sm font-medium"
+                                        data-i18n="pillars.data.item1">Dashboards & Reportes</span>
                                 </div>
                                 <div
                                     class="flex items-center gap-3 rounded-lg border border-white/10 bg-surface-dark p-4 hover:border-primary/60 transition-all duration-300">
                                     <span
                                         class="material-symbols-outlined text-primary-glow text-[24px]">conversion_path</span>
-                                    <span class="text-white text-sm font-medium">Automatización de Datos</span>
+                                    <span class="text-white text-sm font-medium"
+                                        data-i18n="pillars.data.item2">Automatización de Datos</span>
                                 </div>
                             </div>
                         </div>
@@ -428,12 +475,14 @@
                                     <span class="material-symbols-outlined text-[36px] text-cyan-400">code</span>
                                 </div>
                                 <div>
-                                    <h3 class="text-white text-xl md:text-2xl font-bold leading-tight tracking-tight">
+                                    <h3 class="text-white text-xl md:text-2xl font-bold leading-tight tracking-tight"
+                                        data-i18n="pillars.software.title">
                                         Software a Medida</h3>
                                     <p class="text-cyan-300 text-sm mt-1 font-medium tracking-wide">Federico Tahan</p>
                                 </div>
                             </div>
-                            <p class="text-slate-300 mb-8 leading-relaxed text-base flex-grow">
+                            <p class="text-slate-300 mb-8 leading-relaxed text-base flex-grow"
+                                data-i18n="pillars.software.desc">
                                 Desarrollamos sistemas personalizados que se adaptan a tu operación. Desde aplicaciones
                                 web hasta integraciones con tus sistemas existentes.
                             </p>
@@ -441,12 +490,14 @@
                                 <div
                                     class="flex items-center gap-3 rounded-lg border border-white/10 bg-surface-dark p-4 hover:border-accent/60 transition-all duration-300">
                                     <span class="material-symbols-outlined text-cyan-400 text-[24px]">web</span>
-                                    <span class="text-white text-sm font-medium">Aplicaciones Web & Desktop</span>
+                                    <span class="text-white text-sm font-medium"
+                                        data-i18n="pillars.software.item1">Aplicaciones Web & Desktop</span>
                                 </div>
                                 <div
                                     class="flex items-center gap-3 rounded-lg border border-white/10 bg-surface-dark p-4 hover:border-accent/60 transition-all duration-300">
                                     <span class="material-symbols-outlined text-cyan-400 text-[24px]">api</span>
-                                    <span class="text-white text-sm font-medium">APIs & Integraciones</span>
+                                    <span class="text-white text-sm font-medium" data-i18n="pillars.software.item2">APIs
+                                        & Integraciones</span>
                                 </div>
                             </div>
                         </div>
@@ -464,12 +515,14 @@
                                         class="material-symbols-outlined text-[36px] text-green-400">support_agent</span>
                                 </div>
                                 <div>
-                                    <h3 class="text-white text-xl md:text-2xl font-bold leading-tight tracking-tight">
+                                    <h3 class="text-white text-xl md:text-2xl font-bold leading-tight tracking-tight"
+                                        data-i18n="pillars.ops.title">
                                         Operaciones & Soporte</h3>
                                     <p class="text-green-300 text-sm mt-1 font-medium tracking-wide">Rodrigo Valdez</p>
                                 </div>
                             </div>
-                            <p class="text-slate-300 mb-8 leading-relaxed text-base flex-grow">
+                            <p class="text-slate-300 mb-8 leading-relaxed text-base flex-grow"
+                                data-i18n="pillars.ops.desc">
                                 Mantenemos tu infraestructura funcionando. Soporte técnico, gestión de datos en
                                 producción y mantenimiento de hardware.
                             </p>
@@ -477,12 +530,14 @@
                                 <div
                                     class="flex items-center gap-3 rounded-lg border border-white/10 bg-surface-dark p-4 hover:border-green-500/60 transition-all duration-300">
                                     <span class="material-symbols-outlined text-green-400 text-[24px]">memory</span>
-                                    <span class="text-white text-sm font-medium">Hardware & Mantenimiento</span>
+                                    <span class="text-white text-sm font-medium" data-i18n="pillars.ops.item1">Hardware
+                                        & Mantenimiento</span>
                                 </div>
                                 <div
                                     class="flex items-center gap-3 rounded-lg border border-white/10 bg-surface-dark p-4 hover:border-green-500/60 transition-all duration-300">
                                     <span class="material-symbols-outlined text-green-400 text-[24px]">storage</span>
-                                    <span class="text-white text-sm font-medium">Datos en Producción</span>
+                                    <span class="text-white text-sm font-medium" data-i18n="pillars.ops.item2">Datos en
+                                        Producción</span>
                                 </div>
                             </div>
                         </div>
@@ -504,14 +559,15 @@
                     <div class="flex flex-col gap-4 text-center md:text-left">
                         <div class="flex items-center gap-2 justify-center md:justify-start">
                             <span class="material-symbols-outlined text-primary">analytics</span>
-                            <span class="text-primary font-bold tracking-wider uppercase text-xs">Métricas de
+                            <span class="text-primary font-bold tracking-wider uppercase text-xs"
+                                data-i18n="impact.badge">Métricas de
                                 Rendimiento</span>
                         </div>
-                        <h2
-                            class="text-white text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight tracking-[-0.02em]">
+                        <h2 class="text-white text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight tracking-[-0.02em]"
+                            data-i18n="impact.title">
                             Impacto Real en Negocios
                         </h2>
-                        <p class="text-slate-400 text-lg max-w-2xl">
+                        <p class="text-slate-400 text-lg max-w-2xl" data-i18n="impact.subtitle">
                             Nuestra arquitectura DataOps transforma la velocidad y fiabilidad de sus operaciones
                             empresariales.
                         </p>
@@ -525,9 +581,11 @@
                                 <p
                                     class="text-primary tracking-tight text-5xl md:text-6xl font-extrabold leading-tight">
                                     75%</p>
-                                <p class="text-slate-200 text-base font-bold leading-normal pt-2">Reducción en tiempos
+                                <p class="text-slate-200 text-base font-bold leading-normal pt-2"
+                                    data-i18n="impact.item1.label">Reducción en tiempos
                                 </p>
-                                <p class="text-slate-400 text-sm font-medium leading-normal">de procesamiento de datos
+                                <p class="text-slate-400 text-sm font-medium leading-normal"
+                                    data-i18n="impact.item1.desc">de procesamiento de datos
                                 </p>
                             </div>
                         </div>
@@ -539,8 +597,10 @@
                                 <p
                                     class="text-primary tracking-tight text-4xl md:text-5xl font-extrabold leading-tight">
                                     1-a-1</p>
-                                <p class="text-slate-200 text-base font-bold leading-normal pt-2">Soporte Directo</p>
-                                <p class="text-slate-400 text-sm font-medium leading-normal">Acompañamiento humano en tu
+                                <p class="text-slate-200 text-base font-bold leading-normal pt-2"
+                                    data-i18n="impact.item2.label">Soporte Directo</p>
+                                <p class="text-slate-400 text-sm font-medium leading-normal"
+                                    data-i18n="impact.item2.desc">Acompañamiento humano en tu
                                     evolución tecnológica.
                                 </p>
                             </div>
@@ -553,8 +613,10 @@
                                 <p
                                     class="text-primary tracking-tight text-5xl md:text-6xl font-extrabold leading-tight">
                                     85%</p>
-                                <p class="text-slate-200 text-base font-bold leading-normal pt-2">Precisión</p>
-                                <p class="text-slate-400 text-sm font-medium leading-normal">en modelos predictivos de
+                                <p class="text-slate-200 text-base font-bold leading-normal pt-2"
+                                    data-i18n="impact.item3.label">Precisión</p>
+                                <p class="text-slate-400 text-sm font-medium leading-normal"
+                                    data-i18n="impact.item3.desc">en modelos predictivos de
                                     IA</p>
                             </div>
                         </div>
@@ -739,11 +801,14 @@
             <section id="nosotros" class="w-full flex-grow flex flex-col items-center py-20 bg-black">
                 <div class="w-full max-w-[1280px] flex flex-col items-center text-center mb-16 space-y-4 px-4">
                     <span
-                        class="text-primary font-bold tracking-wider uppercase text-xs md:text-sm bg-primary/10 px-3 py-1 rounded-full border border-primary/20">Nuestro
+                        class="text-primary font-bold tracking-wider uppercase text-xs md:text-sm bg-primary/10 px-3 py-1 rounded-full border border-primary/20"
+                        data-i18n="founders.badge">Nuestro
                         Equipo</span>
-                    <h2 class="text-white text-3xl md:text-5xl font-extrabold tracking-tight">Conoce a los Fundadores
+                    <h2 class="text-white text-3xl md:text-5xl font-extrabold tracking-tight"
+                        data-i18n="founders.title">Conoce a los Fundadores
                     </h2>
-                    <p class="text-slate-400 text-base md:text-lg max-w-2xl leading-relaxed">
+                    <p class="text-slate-400 text-base md:text-lg max-w-2xl leading-relaxed"
+                        data-i18n="founders.subtitle">
                         Tres especialistas trabajando juntos para ayudar a tu negocio a crecer con tecnología.
                     </p>
                 </div>
@@ -758,17 +823,21 @@
                         </div>
                         <div class="relative z-20 flex flex-col p-6 -mt-12 flex-grow">
                             <h3 class="text-white text-xl font-bold leading-tight">Rodrigo Valdez</h3>
-                            <p class="text-green-400 text-sm font-bold uppercase tracking-wide mt-1">Operations &
+                            <p class="text-green-400 text-sm font-bold uppercase tracking-wide mt-1"
+                                data-i18n="founders.rodrigo.role">Operations &
                                 Support Lead</p>
-                            <p class="text-slate-400 text-sm leading-relaxed mt-4 mb-4 flex-grow">
+                            <p class="text-slate-400 text-sm leading-relaxed mt-4 mb-4 flex-grow"
+                                data-i18n="founders.rodrigo.bio">
                                 Especialista en soporte operativo, gestión de datos en producción y mantenimiento de
                                 hardware. Garantiza la continuidad de tu negocio.
                             </p>
                             <div class="flex flex-wrap gap-2">
                                 <span
-                                    class="px-3 py-1.5 rounded-md bg-black border border-white/5 text-slate-300 text-xs font-medium">Soporte</span>
+                                    class="px-3 py-1.5 rounded-md bg-black border border-white/5 text-slate-300 text-xs font-medium"
+                                    data-i18n="founders.rodrigo.tag1">Soporte</span>
                                 <span
-                                    class="px-3 py-1.5 rounded-md bg-black border border-white/5 text-slate-300 text-xs font-medium">DataOps</span>
+                                    class="px-3 py-1.5 rounded-md bg-black border border-white/5 text-slate-300 text-xs font-medium"
+                                    data-i18n="founders.rodrigo.tag2">DataOps</span>
                             </div>
                         </div>
                     </div>
@@ -783,17 +852,21 @@
                         </div>
                         <div class="relative z-20 flex flex-col p-6 -mt-12 flex-grow">
                             <h3 class="text-white text-xl font-bold leading-tight">Franco Arce</h3>
-                            <p class="text-primary text-sm font-bold uppercase tracking-wide mt-1">Data & Analytics
+                            <p class="text-primary text-sm font-bold uppercase tracking-wide mt-1"
+                                data-i18n="founders.franco.role">Data & Analytics
                                 Lead</p>
-                            <p class="text-slate-400 text-sm leading-relaxed mt-4 mb-4 flex-grow">
+                            <p class="text-slate-400 text-sm leading-relaxed mt-4 mb-4 flex-grow"
+                                data-i18n="founders.franco.bio">
                                 Especializado en transformar datos en información útil. Dashboards, reportes y análisis
                                 para tomar mejores decisiones de negocio.
                             </p>
                             <div class="flex flex-wrap gap-2">
                                 <span
-                                    class="px-3 py-1.5 rounded-md bg-black border border-white/5 text-slate-300 text-xs font-medium">Analytics</span>
+                                    class="px-3 py-1.5 rounded-md bg-black border border-white/5 text-slate-300 text-xs font-medium"
+                                    data-i18n="founders.franco.tag1">Analytics</span>
                                 <span
-                                    class="px-3 py-1.5 rounded-md bg-black border border-white/5 text-slate-300 text-xs font-medium">BI</span>
+                                    class="px-3 py-1.5 rounded-md bg-black border border-white/5 text-slate-300 text-xs font-medium"
+                                    data-i18n="founders.franco.tag2">BI</span>
                             </div>
                         </div>
                     </div>
@@ -808,17 +881,21 @@
                         </div>
                         <div class="relative z-20 flex flex-col p-6 -mt-12 flex-grow">
                             <h3 class="text-white text-xl font-bold leading-tight">Federico Tahan</h3>
-                            <p class="text-cyan-400 text-sm font-bold uppercase tracking-wide mt-1">Software
+                            <p class="text-cyan-400 text-sm font-bold uppercase tracking-wide mt-1"
+                                data-i18n="founders.federico.role">Software
                                 Development Lead</p>
-                            <p class="text-slate-400 text-sm leading-relaxed mt-4 mb-4 flex-grow">
+                            <p class="text-slate-400 text-sm leading-relaxed mt-4 mb-4 flex-grow"
+                                data-i18n="founders.federico.bio">
                                 Desarrollador Fullstack en .NET, Java y Angular. Experto en APIs RESTful, bases de datos
                                 y patrones de diseño empresarial.
                             </p>
                             <div class="flex flex-wrap gap-2">
                                 <span
-                                    class="px-3 py-1.5 rounded-md bg-black border border-white/5 text-slate-300 text-xs font-medium">Fullstack</span>
+                                    class="px-3 py-1.5 rounded-md bg-black border border-white/5 text-slate-300 text-xs font-medium"
+                                    data-i18n="founders.federico.tag1">Fullstack</span>
                                 <span
-                                    class="px-3 py-1.5 rounded-md bg-black border border-white/5 text-slate-300 text-xs font-medium">.NET/Java</span>
+                                    class="px-3 py-1.5 rounded-md bg-black border border-white/5 text-slate-300 text-xs font-medium"
+                                    data-i18n="founders.federico.tag2">.NET/Java</span>
                             </div>
                         </div>
                     </div>
@@ -941,13 +1018,34 @@
                 },
                 pillars: {
                     badge: 'Nuestros Servicios',
-                    title: 'Soluciones Integrales',
-                    subtitle: 'Tres áreas de especialización trabajando juntas para digitalizar tu negocio y ayudarte a tomar mejores decisiones.'
+                    title: 'Soluciones <span class="text-gradient">Integrales</span>',
+                    subtitle: 'Tres áreas de especialización trabajando juntas para digitalizar tu negocio y ayudarte a tomar mejores decisiones.',
+                    data: {
+                        title: 'Data & Analytics',
+                        desc: 'Transformamos tus datos en información útil. Dashboards, reportes y análisis que te ayudan a entender tu negocio y tomar mejores decisiones.',
+                        item1: 'Dashboards & Reportes',
+                        item2: 'Automatización de Datos'
+                    },
+                    software: {
+                        title: 'Software a Medida',
+                        desc: 'Desarrollamos sistemas personalizados que se adaptan a tu operación. Desde aplicaciones web hasta integraciones con tus sistemas existentes.',
+                        item1: 'Aplicaciones Web & Desktop',
+                        item2: 'APIs & Integraciones'
+                    },
+                    ops: {
+                        title: 'Operaciones & Soporte',
+                        desc: 'Mantenemos tu infraestructura funcionando. Soporte técnico, gestión de datos en producción y mantenimiento de hardware.',
+                        item1: 'Hardware & Mantenimiento',
+                        item2: 'Datos en Producción'
+                    }
                 },
                 impact: {
                     badge: 'Métricas de Rendimiento',
                     title: 'Impacto Real en Negocios',
-                    subtitle: 'Nuestra arquitectura transforma la velocidad y fiabilidad de sus operaciones.'
+                    subtitle: 'Nuestra arquitectura DataOps transforma la velocidad y fiabilidad de sus operaciones empresariales.',
+                    item1: { label: 'Reducción en tiempos', desc: 'de procesamiento de datos' },
+                    item2: { label: 'Soporte Directo', desc: 'Acompañamiento humano en tu evolución tecnológica.' },
+                    item3: { label: 'Precisión', desc: 'en modelos predictivos de IA' }
                 },
                 founders: {
                     badge: 'Nuestro Equipo',
@@ -955,15 +1053,21 @@
                     subtitle: 'Tres especialistas trabajando juntos para ayudar a tu negocio a crecer con tecnología.',
                     rodrigo: {
                         role: 'Operations & Support Lead',
-                        bio: 'Especialista en soporte operativo, gestión de datos en producción y mantenimiento de hardware.'
+                        bio: 'Especialista en soporte operativo, gestión de datos en producción y mantenimiento de hardware. Garantiza la continuidad de tu negocio.',
+                        tag1: 'Soporte',
+                        tag2: 'DataOps'
                     },
                     franco: {
                         role: 'Data & Analytics Lead',
-                        bio: 'Especializado en transformar datos en información útil. Dashboards, reportes y análisis para decisiones de negocio.'
+                        bio: 'Especializado en transformar datos en información útil. Dashboards, reportes y análisis para tomar mejores decisiones de negocio.',
+                        tag1: 'Analytics',
+                        tag2: 'BI'
                     },
                     federico: {
                         role: 'Software Development Lead',
-                        bio: 'Desarrollador Fullstack en .NET, Java y Angular. Experto en APIs RESTful, bases de datos y patrones empresariales.'
+                        bio: 'Desarrollador Fullstack en .NET, Java y Angular. Experto en APIs RESTful, bases de datos y patrones de diseño empresarial.',
+                        tag1: 'Fullstack',
+                        tag2: '.NET/Java'
                     }
                 },
                 cases: {
@@ -1077,13 +1181,34 @@
                 },
                 pillars: {
                     badge: 'Our Services',
-                    title: 'Integrated Solutions',
-                    subtitle: 'Three areas of expertise working together to digitize your business and help you make better decisions.'
+                    title: 'Integrated <span class="text-gradient">Solutions</span>',
+                    subtitle: 'Three areas of expertise working together to digitize your business and help you make better decisions.',
+                    data: {
+                        title: 'Data & Analytics',
+                        desc: 'We transform your data into useful information. Dashboards, reports, and analytics to help you understand your business and make better decisions.',
+                        item1: 'Dashboards & Reports',
+                        item2: 'Data Automation'
+                    },
+                    software: {
+                        title: 'Custom Software',
+                        desc: 'We develop custom systems that adapt to your operation. From web applications to integrations with your existing systems.',
+                        item1: 'Web & Desktop Apps',
+                        item2: 'APIs & Integrations'
+                    },
+                    ops: {
+                        title: 'Operations & Support',
+                        desc: 'We keep your infrastructure running. Technical support, production data management, and hardware maintenance.',
+                        item1: 'Hardware & Maintenance',
+                        item2: 'Production Data'
+                    }
                 },
                 impact: {
                     badge: 'Performance Metrics',
                     title: 'Real Business Impact',
-                    subtitle: 'Our architecture transforms the speed and reliability of your operations.'
+                    subtitle: 'Our DataOps architecture transforms the speed and reliability of your business operations.',
+                    item1: { label: 'Time Reduction', desc: 'in data processing' },
+                    item2: { label: 'Direct Support', desc: 'Human guidance in your technological evolution.' },
+                    item3: { label: 'Accuracy', desc: 'in predictive AI models' }
                 },
                 founders: {
                     badge: 'Our Team',
@@ -1091,15 +1216,21 @@
                     subtitle: 'Three specialists working together to help your business grow with technology.',
                     rodrigo: {
                         role: 'Operations & Support Lead',
-                        bio: 'Specialist in operational support, production data management and hardware maintenance.'
+                        bio: 'Specialist in operational support, production data management, and hardware maintenance. Guarantees your business continuity.',
+                        tag1: 'Support',
+                        tag2: 'DataOps'
                     },
                     franco: {
                         role: 'Data & Analytics Lead',
-                        bio: 'Specialized in transforming data into useful information. Dashboards, reports and analytics for business decisions.'
+                        bio: 'Specialized in transforming data into useful information. Dashboards, reports, and analytics for business decisions.',
+                        tag1: 'Analytics',
+                        tag2: 'BI'
                     },
                     federico: {
                         role: 'Software Development Lead',
-                        bio: 'Fullstack developer in .NET, Java and Angular. Expert in RESTful APIs, databases and enterprise patterns.'
+                        bio: 'Fullstack developer in .NET, Java and Angular. Expert in RESTful APIs, databases and enterprise design patterns.',
+                        tag1: 'Fullstack',
+                        tag2: '.NET/Java'
                     }
                 },
                 cases: {
@@ -1195,12 +1326,37 @@
         let auditAnswers = {};
         let isConfirmationScreen = false;
 
-        document.getElementById('langToggle')?.addEventListener('click', function () {
-            currentLang = currentLang === 'es' ? 'en' : 'es';
-            document.getElementById('currentLang').textContent = currentLang.toUpperCase();
-            updateContent(currentLang);
-            renderAuditStep(currentStep);
+        const langToggles = ['langToggle', 'langToggleMobile'];
+        langToggles.forEach(id => {
+            document.getElementById(id)?.addEventListener('click', function () {
+                currentLang = currentLang === 'es' ? 'en' : 'es';
+                const langText = currentLang.toUpperCase();
+                document.getElementById('currentLang').textContent = langText;
+                document.getElementById('currentLangMobile').textContent = langText;
+                updateContent(currentLang);
+                renderAuditStep(currentStep);
+            });
         });
+
+        // Mobile Menu Logic
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const closeMobileMenu = document.getElementById('closeMobileMenu');
+
+        function openMenu() {
+            mobileMenu.classList.remove('translate-x-full');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMenu() {
+            mobileMenu.classList.add('translate-x-full');
+            document.body.style.overflow = '';
+        }
+
+        mobileMenuBtn?.addEventListener('click', openMenu);
+        closeMobileMenu?.addEventListener('click', closeMenu);
+
+        // Close menu on link click is handled by inline onclick="closeMenu()" in HTML
 
         // Initialize audit form functionality
         document.getElementById('audit-next-btn')?.addEventListener('click', function () {
@@ -1442,11 +1598,29 @@ Awaiting your response!`;
         function updateContent(lang) {
             const t = translations[lang];
 
-            // Update navigation links in header
+            // 1. Generic Translation for all data-i18n elements
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const path = el.getAttribute('data-i18n');
+
+                // Traverse the translation object using the path (e.g., "pillars.data.title")
+                const value = path.split('.').reduce((obj, key) => obj && obj[key], t);
+
+                if (value) {
+                    // Use innerHTML for titles/badges to support HTML tags (like gradients), textContent for others
+                    if (path.includes('title') || path.includes('badge') || path.includes('subtitle')) {
+                        el.innerHTML = value;
+                    } else {
+                        el.textContent = value;
+                    }
+                }
+            });
+
+            // 2. Specific updates for complex elements or non-data-i18n elements
+
+            // Navigation links logic (mostly to handle the scheduled button separately)
             const navLinks = document.querySelectorAll('nav a[href^="#"]');
             navLinks.forEach(link => {
                 const href = link.getAttribute('href');
-                // Skip if it's a button with icon
                 if (link.querySelector('.material-symbols-outlined')) return;
 
                 if (href === '#servicios') link.textContent = t.nav.services;
@@ -1455,25 +1629,10 @@ Awaiting your response!`;
                 else if (href === '#audit') link.textContent = t.nav.audit;
             });
 
-            // Update "Agendar Consulta" button in header
             const headerBtn = document.querySelector('nav a[href="#audit"] span.truncate');
             if (headerBtn) headerBtn.textContent = t.nav.schedule;
 
-            // Update hero title
-            const heroTitle = document.querySelector('#hero h1');
-            if (heroTitle) {
-                const beforeText = lang === 'es' ? 'Automatización de Operaciones y ' : 'Operations Automation and ';
-                const gradientText = lang === 'es' ? 'Arquitectura de Datos' : 'Data Architecture';
-                heroTitle.innerHTML = beforeText + '<span class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-purple-400 to-accent">' + gradientText + '</span>';
-            }
-
-            // Update hero subtitle
-            const heroSubtitle = document.querySelector('#hero p.text-lg');
-            if (heroSubtitle) {
-                heroSubtitle.textContent = t.hero.subtitle;
-            }
-
-            // Update all buttons with .btn-text class
+            // Hero CTA buttons
             document.querySelectorAll('.btn-text').forEach(btnText => {
                 const parent = btnText.closest('a');
                 if (!parent) return;
@@ -1486,70 +1645,16 @@ Awaiting your response!`;
                 }
             });
 
-            // Update trust text
             const trustText = document.querySelector('#hero p.text-xs');
             if (trustText) {
                 trustText.textContent = t.hero.trust;
             }
 
-            // Update Founders section
-            const foundersBadge = document.querySelector('#nosotros span.text-primary');
-            if (foundersBadge) foundersBadge.textContent = t.founders.badge;
-
-            const foundersTitle = document.querySelector('#nosotros h2');
-            if (foundersTitle) foundersTitle.textContent = t.founders.title;
-
-            const foundersSubtitle = document.querySelector('#nosotros > div > p');
-            if (foundersSubtitle) foundersSubtitle.textContent = t.founders.subtitle;
-
-            // Update Rodrigo's card
-            const rodrigoRole = document.querySelectorAll('#nosotros .text-primary')[1];
-            if (rodrigoRole) rodrigoRole.textContent = t.founders.rodrigo.role;
-
-            const rodrigoBio = document.querySelectorAll('#nosotros .text-slate-400')[0];
-            if (rodrigoBio) rodrigoBio.textContent = t.founders.rodrigo.bio;
-
-            // Update Franco's card
-            const francoRole = document.querySelectorAll('#nosotros .text-primary')[2];
-            if (francoRole) francoRole.textContent = t.founders.franco.role;
-
-            const francoBio = document.querySelectorAll('#nosotros .text-slate-400')[1];
-            if (francoBio) francoBio.textContent = t.founders.franco.bio;
-
-            // Update Cases Section
-            const casesBadge = document.querySelector('#casos span[data-i18n="cases.badge"]');
-            if (casesBadge) casesBadge.textContent = t.cases.badge;
-
-            const casesTitle = document.querySelector('#casos h2[data-i18n="cases.title"]');
-            if (casesTitle) casesTitle.textContent = t.cases.title;
-
-            const casesSubtitle = document.querySelector('#casos p[data-i18n="cases.subtitle"]');
-            if (casesSubtitle) casesSubtitle.textContent = t.cases.subtitle;
-
-            // Update each case
-            ['case1', 'case2', 'case3', 'case4', 'case5'].forEach(caseKey => {
-                const tag = document.querySelector(`#casos span[data-i18n="cases.${caseKey}.tag"]`);
-                const title = document.querySelector(`#casos h3[data-i18n="cases.${caseKey}.title"]`);
-                const desc = document.querySelector(`#casos p[data-i18n="cases.${caseKey}.desc"]`);
-
-                if (tag && t.cases[caseKey]) tag.textContent = t.cases[caseKey].tag;
-                if (title && t.cases[caseKey]) title.textContent = t.cases[caseKey].title;
-                if (desc && t.cases[caseKey]) desc.textContent = t.cases[caseKey].desc;
-            });
-
-            // Update CTA card
-            const ctaTitle = document.querySelector('#casos h3[data-i18n="cases.cta.title"]');
-            if (ctaTitle) ctaTitle.textContent = t.cases.cta.title;
-
-            const ctaDesc = document.querySelector('#casos p[data-i18n="cases.cta.desc"]');
-            if (ctaDesc) ctaDesc.textContent = t.cases.cta.desc;
-
-            // Update Audit Form
-            // This is now handled by renderAuditStep(currentStep) in the lang toggle event
-            // But we keep the footer update here
             const footerCopy = document.querySelector('footer span.text-slate-500');
             if (footerCopy) footerCopy.textContent = t.footer.copyright;
         }
+
+
     </script>
 </body>
 
